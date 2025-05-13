@@ -1,0 +1,43 @@
+/* Fonts */
+@font-face {
+    font-family: "Roboto";
+    font-weight: 100 900;
+    font-display: swap;
+    src: url(../../public/fonts/roboto-variable.ttf);
+}
+
+/* Light mode theme */
+:root {
+    --primary: #8dad2b;
+    --secondary: #b4c578;
+    --text: #000000;
+    --text-accent: rgba(0, 0, 0, 0.7);
+    --text-disabled: rgba(0, 0, 0, 0.4);
+    --accent: rgba(0, 0, 0, 0.2);
+    --background: #ffffff;
+    --success: #83af50;
+    --warning: #ffc107;
+    --error: #eb2c2c;
+    --header-height: 4rem;
+    --sidebar-width: 15rem;
+    --border-radius: .5rem;
+}
+
+/* Dark mode theme */
+.dark-mode {
+    --secondary: #3d4421;
+    --text: #ffffff;
+    --text-accent: rgba(255, 255, 255, 0.6);
+    --text-disabled: rgba(255, 255, 255, 0.4);
+    --accent: rgba(255, 255, 255, 0.2);
+    --background: #000000;
+    --warning: #b3841f;
+    --error: #881c1c;
+}
+
+/* Global defaults */
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Ubuntu', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 300;
+}
