@@ -1,17 +1,8 @@
 <template>
-    <div class="container">
-        <div class="spinner"/>
-    </div>
+    <div class="spinner"/>
 </template>
 
 <style scoped>
-.container {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-}
 .spinner {
     width: 50px;
     padding: 8px;

@@ -1,5 +1,15 @@
 <template>
-    <div class="text-field" :class="{'big': big, 'error': error}">
+    <label v-if="label">{{ label }}
+        <div class="text-field" :class="{'big': big, 'error': error}">
+            <input ref="textField" v-model="modelValue" :type="getType()" :placeholder="placeholder">
+            <div v-if="password">
+                <FishButton v-show="showPassword" simple title="Hide password" icon="mdi:eye-off" @click="showPassword = false"/>
+                <FishButton v-show="!showPassword" simple title="Hide password" icon="mdi:eye" @click="showPassword = true"/>
+            </div>
+        </div>
+    </label>
+
+    <div v-else class="text-field" :class="{'big': big, 'error': error}">
         <input ref="textField" v-model="modelValue" :type="getType()" :placeholder="placeholder">
         <div v-if="password">
             <FishButton v-show="showPassword" simple title="Hide password" icon="mdi:eye-off" @click="showPassword = false"/>
@@ -15,6 +25,7 @@ const modelValue = defineModel({ type: String, default: '' })
 const props = defineProps({
     placeholder: { type: String, default: '' },
     error: { type: String, default: '' },
+    label: { type: String, default: '' },
     password: Boolean,
     focus: Boolean,
     big: Boolean,
@@ -84,5 +95,13 @@ function getType() {
             margin-right: 1rem;
         }
     }
+}
+
+label {
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
 }
 </style>
