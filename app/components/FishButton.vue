@@ -1,20 +1,22 @@
 <template>
     <NuxtLink v-if="to" :to="to" :class="classes" :disabled="disabled">
         <Icon v-if="icon" :name="icon"/>
-        <slot>{{ text }}</slot>
+        <slot v-if="text">{{ text }}</slot>
+        <slot v-else/>
         <Icon v-if="appendIcon" :name="appendIcon"/>
     </NuxtLink>
 
     <button v-else :class="classes" :disabled="disabled">
         <Icon v-if="icon" :name="icon"/>
-        <slot>{{ text }}</slot>
+        <slot v-if="text">{{ text }}</slot>
+        <slot v-else/>
         <Icon v-if="appendIcon" :name="appendIcon"/>
     </button>
 </template>
 
 <script setup>
 const props = defineProps({
-    text: { type: String, default: '' },
+    text: Boolean,
     to: { type: String, default: '' },
     primary: Boolean,
     border: Boolean,
@@ -46,16 +48,17 @@ const classes = computed(() => ({
 
 <style scoped>
 button, a {
-    padding: .5rem 1rem;
+    padding: .5rem .75rem;
     letter-spacing: 1.25px;
     display: flex;
     gap: .5rem;
     align-items: center;
     justify-content: center;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 1em;
     text-transform: uppercase;
     text-decoration: inherit;
+    text-wrap: nowrap;
     min-width: fit-content;
     border: none;
     border-radius: var(--border-radius);
@@ -75,7 +78,6 @@ button, a {
     }
     &.primary {
         color: white;
-        font-weight: 400;
         background-color: var(--primary);
         &:is(:hover, :focus, .selected):not(.disabled) {
             filter: brightness(1.2);
@@ -140,6 +142,7 @@ button, a {
     }
     &.simple {
         color: var(--text-accent);
+        font-weight: 500;
         padding: 0;
         background-color: transparent;
         &:is(:hover, :focus, .selected):not(.disabled) {
