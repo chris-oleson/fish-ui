@@ -1,9 +1,9 @@
 <template>
-    <div class="spinner"/>
+    <div></div>
 </template>
 
 <style scoped>
-.spinner {
+div {
     width: 50px;
     padding: 8px;
     aspect-ratio: 1;
