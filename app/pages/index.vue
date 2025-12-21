@@ -25,22 +25,18 @@
                 <div class="small column">
                     <span>Small column</span>
                     <div class="card">
-                        <span>Card with buttons</span>
+                        <span>Card</span>
                         <FishButton primary>Primary</FishButton>
-                        <FishButton primary icon><Icon name="mdi:account-circle"/></FishButton>
-                        <FishButton primary icon text><Icon name="mdi:account-circle"/>Icon</FishButton>
+                        <FishButton round primary><Icon name="mdi:account"/></FishButton>
+                        <FishButton round border><Icon name="mdi:account"/></FishButton>
+                        <FishButton round simple><Icon name="mdi:account"/></FishButton>
+                        <FishButton primary><Icon name="mdi:account"/>Icon</FishButton>
                         <FishButton border>Border</FishButton>
                         <FishButton error>Error</FishButton>
                         <FishButton simple>Simple</FishButton>
                         <FishButton primary disabled>Disabled Primary</FishButton>
                         <FishButton border disabled>Disabled Border</FishButton>
                         <FishButton simple disabled>Disabled Simple</FishButton>
-                    </div>
-
-                    <div class="card">
-                        <span>Card</span>
-                        <FishButton small primary>Small Primary</FishButton>
-                        <FishButton small simple>Small Simple</FishButton>
                     </div>
                 </div>
 

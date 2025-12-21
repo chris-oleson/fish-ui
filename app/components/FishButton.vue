@@ -1,5 +1,5 @@
 <template>
-    <component :is="component" :to="to" :disabled="isButton && disabled" :class="classes">
+    <component :is="component" :to="to" :disabled="disabled" :class="classes">
         <slot />
     </component>
 </template>
@@ -16,12 +16,10 @@ const props = defineProps({
     selected: Boolean,
     disabled: Boolean,
     error: Boolean,
-    icon: Boolean,
-    text: Boolean
+    round: Boolean,
 })
 
 const component = computed(() => (props.to ? 'NuxtLink' : 'button'))
-const isButton = computed(() => !props.to)
 
 const classes = computed(() => ({
     primary: props.primary,
@@ -33,8 +31,7 @@ const classes = computed(() => ({
     selected: props.selected,
     disabled: props.disabled,
     error: props.error,
-    icon: props.icon,
-    text: props.text
+    round: props.round,
 }))
 </script>
 
@@ -60,7 +57,7 @@ button, a {
     outline: none;
     cursor: pointer;
     height: fit-content;
-    &.icon:not(.text) {
+    &.round {
         width: fit-content;
         padding: .5rem;
         border-radius: 50%;
@@ -98,7 +95,7 @@ button, a {
         gap: 1rem;
         padding: 1rem;
         font-size: 1.25rem;
-        .icon:not(.text) {
+        .round {
             padding: 0;
         }
     }
@@ -115,13 +112,13 @@ button, a {
         }
     }
     &.error {
-        border: 1px solid var(--error);
-        color: var(--error);
-        background-color: transparent;
+        color: white;
+        background-color: var(--error);
         &:is(:hover, :focus, .selected):not(.disabled) {
-            background-color: var(--error);
-            border-color: var(--error);
-            color: white;
+            filter: brightness(1.3);
+        }
+        &:active:not(.disabled) {
+            filter: brightness(1);
         }
     }
 }
