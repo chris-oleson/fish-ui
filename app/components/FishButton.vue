@@ -1,22 +1,10 @@
 <template>
-    <NuxtLink v-if="to" :to="to" :class="classes" :disabled="disabled">
-        <Icon v-if="icon" :name="icon" />
+    <component :is="component" :to="to" :disabled="isButton && disabled" :class="classes">
         <slot />
-        <Icon v-if="appendIcon" :name="appendIcon" />
-    </NuxtLink>
-
-    <button v-else :class="classes" :disabled="disabled">
-        <Icon v-if="icon" :name="icon" />
-        <slot />
-        <Icon v-if="appendIcon" :name="appendIcon" />
-    </button>
+    </component>
 </template>
 
 <script setup>
-import { computed, useSlots } from 'vue'
-
-const slots = useSlots()
-
 const props = defineProps({
     to: { type: String, default: '' },
     primary: Boolean,
@@ -28,14 +16,12 @@ const props = defineProps({
     selected: Boolean,
     disabled: Boolean,
     error: Boolean,
-    icon: { type: String, default: '' },
-    appendIcon: { type: String, default: '' }
+    icon: Boolean,
+    text: Boolean
 })
 
-const hasText = computed(() => {
-    const slot = slots.default?.()
-    return !!slot && slot.some(vnode => vnode.children?.toString().trim())
-})
+const component = computed(() => (props.to ? 'NuxtLink' : 'button'))
+const isButton = computed(() => !props.to)
 
 const classes = computed(() => ({
     primary: props.primary,
@@ -48,7 +34,7 @@ const classes = computed(() => ({
     disabled: props.disabled,
     error: props.error,
     icon: props.icon,
-    text: hasText.value,
+    text: props.text
 }))
 </script>
 
@@ -74,13 +60,10 @@ button, a {
     outline: none;
     cursor: pointer;
     height: fit-content;
-    & .iconify {
-        font-size: 1.5rem;
-    }
-    &:not(.text) {
+    &.icon:not(.text) {
+        width: fit-content;
         padding: .5rem;
         border-radius: 50%;
-        font-size: 1.5rem;
     }
     &.primary {
         color: white;
@@ -115,11 +98,8 @@ button, a {
         gap: 1rem;
         padding: 1rem;
         font-size: 1.25rem;
-        &:not(.text) {
+        .icon:not(.text) {
             padding: 0;
-            & .iconify {
-                font-size: 2rem;
-            }
         }
     }
     &.small {

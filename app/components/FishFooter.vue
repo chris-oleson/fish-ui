@@ -1,14 +1,15 @@
 <template>
     <footer>
-        <div class="column">
-            <p>This is a footer</p>
-        </div>
+        <p>This is a footer</p>
     </footer>
 </template>
 
 <style scoped>
 footer {
     height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 p {
