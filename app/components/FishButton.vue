@@ -1,22 +1,23 @@
 <template>
     <NuxtLink v-if="to" :to="to" :class="classes" :disabled="disabled">
-        <Icon v-if="icon" :name="icon"/>
-        <slot v-if="text">{{ text }}</slot>
-        <slot v-else/>
-        <Icon v-if="appendIcon" :name="appendIcon"/>
+        <Icon v-if="icon" :name="icon" />
+        <slot />
+        <Icon v-if="appendIcon" :name="appendIcon" />
     </NuxtLink>
 
     <button v-else :class="classes" :disabled="disabled">
-        <Icon v-if="icon" :name="icon"/>
-        <slot v-if="text">{{ text }}</slot>
-        <slot v-else/>
-        <Icon v-if="appendIcon" :name="appendIcon"/>
+        <Icon v-if="icon" :name="icon" />
+        <slot />
+        <Icon v-if="appendIcon" :name="appendIcon" />
     </button>
 </template>
 
 <script setup>
+import { computed, useSlots } from 'vue'
+
+const slots = useSlots()
+
 const props = defineProps({
-    text: Boolean,
     to: { type: String, default: '' },
     primary: Boolean,
     border: Boolean,
@@ -31,6 +32,11 @@ const props = defineProps({
     appendIcon: { type: String, default: '' }
 })
 
+const hasText = computed(() => {
+    const slot = slots.default?.()
+    return !!slot && slot.some(vnode => vnode.children?.toString().trim())
+})
+
 const classes = computed(() => ({
     primary: props.primary,
     border: props.border,
@@ -42,7 +48,7 @@ const classes = computed(() => ({
     disabled: props.disabled,
     error: props.error,
     icon: props.icon,
-    text: props.text,
+    text: hasText.value,
 }))
 </script>
 
@@ -55,11 +61,11 @@ button, a {
     align-items: center;
     justify-content: center;
     font-weight: 500;
-    font-size: 1em;
+    font-size: 1rem;
     text-transform: uppercase;
     text-decoration: inherit;
-    text-wrap: nowrap;
     min-width: fit-content;
+    width: 100%;
     border: none;
     border-radius: var(--border-radius);
     transition-duration: .2s;
@@ -80,10 +86,10 @@ button, a {
         color: white;
         background-color: var(--primary);
         &:is(:hover, :focus, .selected):not(.disabled) {
-            filter: brightness(1.2);
+            filter: brightness(1.3);
         }
-        &.error {
-            background-color: var(--error);
+        &:active:not(.disabled) {
+            filter: brightness(1);
         }
     }
     &.border {
@@ -97,28 +103,6 @@ button, a {
         &:is(:hover, :focus):not(.disabled, .selected) {
             border: 1px solid var(--text);
         }
-        &.error {
-            color: var(--error);
-            border-color: var(--error);
-            &:is(:hover, :focus, .selected):not(.disabled) {
-                background-color: var(--error);
-                border-color: var(--error);
-                color: white;
-            }
-        }
-    }
-    &.background {
-        color: var(--text-accent);
-        background-color: transparent;
-        text-transform: none;
-        letter-spacing: normal;
-        &:is(:hover, :focus):not(.disabled, .selected) {
-            color: var(--text);
-        }
-        &.selected {
-            color: var(--text);
-            background-color: var(--accent);
-        }
     }
     &.selected {
         pointer-events: none;
@@ -130,6 +114,7 @@ button, a {
     &.big {
         gap: 1rem;
         padding: 1rem;
+        font-size: 1.25rem;
         &:not(.text) {
             padding: 0;
             & .iconify {
@@ -147,6 +132,16 @@ button, a {
         background-color: transparent;
         &:is(:hover, :focus, .selected):not(.disabled) {
             color: var(--text);
+        }
+    }
+    &.error {
+        border: 1px solid var(--error);
+        color: var(--error);
+        background-color: transparent;
+        &:is(:hover, :focus, .selected):not(.disabled) {
+            background-color: var(--error);
+            border-color: var(--error);
+            color: white;
         }
     }
 }

@@ -1,0 +1,238 @@
+@font-face {
+    font-family: "Roboto";
+    font-weight: 100 900;
+    font-display: swap;
+    src: url(/fonts/roboto-variable.ttf);
+}
+@font-face {
+    font-family: "Roboto Mono";
+    font-weight: 100 900;
+    font-display: swap;
+    src: url(/fonts/roboto-mono-variable.ttf);
+}
+@font-face {
+    font-family: "Playfair Display";
+    font-weight: 100 900;
+    font-display: swap;
+    src: url(/fonts/playfair-display-variable.ttf);
+}
+
+:root {
+    --primary: #3e3eeb;
+    --secondary: #6969c2;
+    --text: #000000;
+    --text-accent: rgba(0, 0, 0, 0.6);
+    --text-disabled: rgba(0, 0, 0, 0.4);
+    --accent: rgba(0, 0, 0, 0.3);
+    --background: white;
+    --success: #83af50;
+    --warning: #ffc107;
+    --error: #eb2c2c;
+    --header-height: 4rem;
+    --sidebar-width: 15rem;
+    --border-radius: .5rem;
+    --book-cover: linear-gradient(to right, rgba(0, 0, 0, .5) 3px, rgba(255, 255, 255, 0.5) 5px, rgba(255, 255, 255, 0.25) 7px, rgba(255, 255, 255, 0.25) 10px, transparent 12px, transparent 16px, rgba(255, 255, 255, 0.25) 17px, transparent 22px);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    background-color: var(--background);
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    color: var(--text);
+    font-family: "Playfair Display", "Times New Roman", serif;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+h2 {
+    color: var(--text);
+    font-family: "Playfair Display", "Times New Roman", serif;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    color: var(--text);
+    font-family: "Playfair Display", "Times New Roman", serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    margin: 1rem 0;
+
+    &.error {
+        color: var(--error);
+    }
+}
+
+b {
+    font-weight: 600;
+}
+
+a {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-accent);
+    transition-duration: .2s;
+    text-decoration: none;
+    &:hover {
+        color: var(--text);
+    }
+}
+
+img {
+    display: block;
+}
+
+ul {
+    padding-left: 1rem;
+
+    & li {
+        margin: .5rem 0;
+        font-weight: 400;
+    }
+}
+
+strong {
+    font-weight: 500;
+}
+
+hr, .horizontal.divider {
+    border: none;
+    border-bottom: 1px solid var(--accent);
+    width: 100%;
+    margin: 0;
+}
+.vertical.divider {
+    border: none;
+    border-right: 1px solid var(--accent);
+    height: 100%;
+    margin: 0 1rem;
+}
+
+code {
+    font-family: 'Roboto Mono', monospace;
+    background-color: var(--low-accent);
+    padding: 0 .25rem;
+    border-radius: .25rem;
+}
+
+section {
+    color: var(--text);
+    padding: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.spacer {
+    &.vertical {
+        height: 100%;
+    }
+    &.horizontal {
+        width: 100%
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    border: 1px solid var(--accent);
+    overflow: hidden;
+    background-color: white;
+    & p {
+        text-align: center;
+        margin: 0;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    & * {
+        margin: 0;
+        width: 100%;
+    }
+}
+
+dialog {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    margin: 0;
+    &::backdrop {
+        background-color: rgba(0, 0, 0, .5);
+        backdrop-filter: blur(.25rem);
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.column {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &.small {
+        flex: 1;
+    }
+
+    &.big {
+        flex: 4;
+    }
+}
+
+.chip {
+    background: transparent;
+    padding: .25rem .5rem;
+    border-radius: 1rem;
+    border: 1px solid var(--text);
+    color: var(--text);
+    text-wrap: nowrap;
+}
+
+.markdown {
+    & h2 {
+        text-align: center;
+    }
+
+    & hr {
+        margin: 3rem 0;
+    }
+}

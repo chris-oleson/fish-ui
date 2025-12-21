@@ -38,6 +38,7 @@ div {
     overflow: hidden;
     transition-duration: .2s;
     height: fit-content;
+    width: 100%;
 
     &:hover, &:has(select:focus) {
         border-color: var(--text);

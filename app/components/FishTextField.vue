@@ -58,6 +58,7 @@ function getType() {
     border-radius: var(--border-radius);
     transition-duration: .2s;
     height: fit-content;
+    width: 100%;
     overflow: hidden;
     &:hover, &:has(input:focus) {
         border-color: var(--text);
@@ -71,7 +72,7 @@ function getType() {
         height: 2rem;
         padding: 0 .5rem;
         color: var(--text);
-        background-color: var(--background);
+        background-color: transparent;
         outline: none;
         border: none;
         font-size: 1rem;
@@ -103,5 +104,7 @@ label {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    text-wrap: nowrap;
+    width: 100%;
 }
 </style>

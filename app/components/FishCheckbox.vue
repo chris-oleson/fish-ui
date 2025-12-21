@@ -25,6 +25,8 @@ input {
     color: var(--text);
     appearance: none;
     position: relative;
+    background-color: transparent;
+    border-radius: var(--border-radius);
 }
 
 input:before {
@@ -59,5 +61,6 @@ label {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    width: 100%;
 }
 </style>
