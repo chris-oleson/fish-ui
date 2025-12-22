@@ -4,7 +4,7 @@
             <input ref="textField" v-model="modelValue" :type="getType()" :placeholder="placeholder">
             <div v-if="password">
                 <FishButton v-show="showPassword" simple title="Hide password" icon="mdi:eye-off" @click="showPassword = false"/>
-                <FishButton v-show="!showPassword" simple title="Hide password" icon="mdi:eye" @click="showPassword = true"/>
+                <FishButton v-show="!showPassword" simple title="Show password" icon="mdi:eye" @click="showPassword = true"/>
             </div>
         </div>
     </label>
@@ -13,7 +13,7 @@
         <input ref="textField" v-model="modelValue" :type="getType()" :placeholder="placeholder">
         <div v-if="password">
             <FishButton v-show="showPassword" simple title="Hide password" icon="mdi:eye-off" @click="showPassword = false"/>
-            <FishButton v-show="!showPassword" simple title="Hide password" icon="mdi:eye" @click="showPassword = true"/>
+            <FishButton v-show="!showPassword" simple title="Show password" icon="mdi:eye" @click="showPassword = true"/>
         </div>
     </div>
 </template>

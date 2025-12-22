@@ -1,7 +1,10 @@
 <template>
-    <component :is="component" :to="to" :disabled="disabled" :class="classes">
+    <NuxtLink v-if="to" :to="to" :disabled="disabled" :class="classes">
         <slot />
-    </component>
+    </NuxtLink>
+    <button v-else :disabled="disabled" :class="classes">
+        <slot />
+    </button>
 </template>
 
 <script setup>
@@ -18,8 +21,6 @@ const props = defineProps({
     error: Boolean,
     round: Boolean,
 })
-
-const component = computed(() => (props.to ? 'NuxtLink' : 'button'))
 
 const classes = computed(() => ({
     primary: props.primary,
@@ -76,12 +77,11 @@ button, a {
         color: var(--text);
         border: 1px solid var(--accent);
         background-color: transparent;
-        &.selected {
-            background-color: var(--accent);
-            border-color: transparent;
-        }
-        &:is(:hover, :focus):not(.disabled, .selected) {
+        &:is(:hover, :focus, .selected):not(.disabled) {
             border: 1px solid var(--text);
+        }
+        &:active:not(.disabled) {
+            border: 1px solid var(--accent);
         }
     }
     &.selected {
@@ -95,6 +95,7 @@ button, a {
         gap: 1rem;
         padding: 1rem;
         font-size: 1.25rem;
+        line-height: 2rem;
         .round {
             padding: 0;
         }
@@ -109,6 +110,9 @@ button, a {
         background-color: transparent;
         &:is(:hover, :focus, .selected):not(.disabled) {
             color: var(--text);
+        }
+        &:active:not(.disabled) {
+            color: var(--text-accent);
         }
     }
     &.error {

@@ -202,6 +202,8 @@ dialog {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .column {
@@ -209,11 +211,9 @@ dialog {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-
     &.small {
         flex: 1;
     }
-
     &.big {
         flex: 4;
     }
