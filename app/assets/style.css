@@ -34,9 +34,19 @@
     --book-cover: linear-gradient(to right, rgba(0, 0, 0, .5) 3px, rgba(255, 255, 255, 0.5) 5px, rgba(255, 255, 255, 0.25) 7px, rgba(255, 255, 255, 0.25) 10px, transparent 12px, transparent 16px, rgba(255, 255, 255, 0.25) 17px, transparent 22px);
 }
 
+.dark {
+    --text: #ffffff;
+    --background: #000000;
+    --accent: rgba(256, 256, 256, 0.2);
+    --text-accent: rgba(256, 256, 256, 0.5);
+    --text-disabled: rgba(256, 256, 256, 0.3);
+}
+
 * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    color: var(--text);
+    font-weight: 400;
 }
 
 html {
@@ -48,37 +58,29 @@ body {
 }
 
 h1 {
-    color: var(--text);
     font-family: "Playfair Display", "Times New Roman", serif;
     font-size: 3rem;
-    font-weight: 400;
     margin-top: 3rem;
     margin-bottom: 2rem;
     text-align: center;
 }
 
 h2 {
-    color: var(--text);
     font-family: "Playfair Display", "Times New Roman", serif;
     font-size: 2rem;
-    font-weight: 400;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
 }
 
 h3 {
-    color: var(--text);
     font-family: "Playfair Display", "Times New Roman", serif;
     font-size: 1.5rem;
-    font-weight: 400;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
 }
 
 p {
-    color: var(--text);
     font-size: 1rem;
-    font-weight: 400;
     line-height: 1.5rem;
     margin: 1rem 0;
 
@@ -87,13 +89,12 @@ p {
     }
 }
 
-b {
+b, strong {
     font-weight: 600;
 }
 
 a {
     font-size: 1rem;
-    font-weight: 400;
     color: var(--text-accent);
     transition-duration: .2s;
     text-decoration: none;
@@ -111,12 +112,7 @@ ul {
 
     & li {
         margin: .5rem 0;
-        font-weight: 400;
     }
-}
-
-strong {
-    font-weight: 500;
 }
 
 hr, .horizontal.divider {
@@ -140,7 +136,6 @@ code {
 }
 
 section {
-    color: var(--text);
     padding: 1rem;
     max-width: 1000px;
     margin: 0 auto;
@@ -164,7 +159,6 @@ section {
     border-radius: .5rem;
     border: 1px solid var(--accent);
     overflow: hidden;
-    background-color: white;
     & p {
         text-align: center;
         margin: 0;
@@ -202,7 +196,6 @@ dialog {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    align-items: center;
     justify-content: center;
 }
 
@@ -224,7 +217,6 @@ dialog {
     padding: .25rem .5rem;
     border-radius: 1rem;
     border: 1px solid var(--text);
-    color: var(--text);
     text-wrap: nowrap;
 }
 

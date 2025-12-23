@@ -50,7 +50,7 @@ select {
     margin: 0;
     outline: none;
     color: var(--text);
-    background-color: var(--background);
+    background-color: transparent;
     border: none;
     padding: 0 .5rem;
     font-size: 1rem;

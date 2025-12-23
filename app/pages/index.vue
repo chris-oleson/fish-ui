@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section style="background-color: lightblue;">
+        <section style="background-color: var(--accent);">
             <span>Section</span>
             <h1>Heading 1</h1>
             <hr>
@@ -16,7 +16,7 @@
             </p>
         </section>
 
-        <section style="background-color: lightgreen;">
+        <section style="background-color: var(--accent);">
             <span>Section</span>
             <h2>Heading 2</h2>
             <div class="row">
@@ -48,14 +48,14 @@
                         <FishButton big border>Big Border</FishButton>
                         <FishButton big simple>Big Simple</FishButton>
                         <FishCheckbox label="Checkbox"/>
-                        <FishTextField label="Text field"/>
+                        <FishTextField label="Text field" placeholder="Placeholder"/>
                         <FishDropdown label="Dropdown" :options="['Option 1', 'Option 2', 'Option 3']"/>
                     </div>
                 </div>
 
                 <div class="big column">
                     <span>Big column</span>
-                    <section style="background-color: lightcoral;">
+                        <section>
                         <span>Section</span>
                         <h3>Heading 3</h3>
                         <hr>
