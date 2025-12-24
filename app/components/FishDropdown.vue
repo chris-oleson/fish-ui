@@ -33,7 +33,7 @@ const modelValue = defineModel({
 
 <style scoped>
 div {
-    border: 1px solid var(--accent);
+    border: var(--border);
     border-radius: var(--border-radius);
     overflow: hidden;
     transition-duration: .2s;

@@ -38,7 +38,7 @@ input:before {
     bottom: 0;
     left: 0;
     right: 0;
-    border: 1px solid var(--accent);
+    border: var(--border);
     border-radius: var(--border-radius);
     transition-duration: .2s;
     cursor: pointer;

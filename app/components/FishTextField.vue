@@ -52,7 +52,7 @@ function getType() {
 <style scoped>
 .text-field {
     outline: none;
-    border: 1px solid var(--accent);
+    border: var(--border);
     display: flex;
     align-items: center;
     border-radius: var(--border-radius);

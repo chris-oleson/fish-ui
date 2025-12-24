@@ -31,6 +31,7 @@
     --header-height: 4rem;
     --sidebar-width: 15rem;
     --border-radius: .5rem;
+    --border: 1px solid var(--accent);
     --book-cover: linear-gradient(to right, rgba(0, 0, 0, .5) 3px, rgba(255, 255, 255, 0.5) 5px, rgba(255, 255, 255, 0.25) 7px, rgba(255, 255, 255, 0.25) 10px, transparent 12px, transparent 16px, rgba(255, 255, 255, 0.25) 17px, transparent 22px);
 }
 
@@ -117,13 +118,13 @@ ul {
 
 hr, .horizontal.divider {
     border: none;
-    border-bottom: 1px solid var(--accent);
+    border-bottom: var(--border);
     width: 100%;
     margin: 0;
 }
 .vertical.divider {
     border: none;
-    border-right: 1px solid var(--accent);
+    border-right: var(--border);
     height: 100%;
     margin: 0 1rem;
 }
@@ -157,7 +158,7 @@ section {
     gap: 1rem;
     padding: 1.5rem;
     border-radius: .5rem;
-    border: 1px solid var(--accent);
+    border: var(--border);
     overflow: hidden;
     & p {
         text-align: center;
@@ -180,15 +181,10 @@ dialog {
     border: none;
     background-color: transparent;
     outline: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     padding: 0;
-    margin: 0;
     &::backdrop {
         background-color: rgba(0, 0, 0, .5);
-        backdrop-filter: blur(.25rem);
+        backdrop-filter: blur(.5rem);
     }
 }
 

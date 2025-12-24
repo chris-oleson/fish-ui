@@ -49,7 +49,6 @@ button, a {
     text-transform: uppercase;
     text-decoration: inherit;
     min-width: fit-content;
-    width: 100%;
     border: none;
     border-radius: var(--border-radius);
     transition-duration: .2s;
@@ -75,13 +74,13 @@ button, a {
     }
     &.border {
         color: var(--text);
-        border: 1px solid var(--accent);
+        border: var(--border);
         background-color: transparent;
         &:is(:hover, :focus, .selected):not(.disabled) {
             border: 1px solid var(--text);
         }
         &:active:not(.disabled) {
-            border: 1px solid var(--accent);
+            border: var(--border);
         }
     }
     &.selected {

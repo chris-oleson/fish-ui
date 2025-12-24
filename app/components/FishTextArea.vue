@@ -26,7 +26,7 @@ textarea {
     border: none;
     font-size: 1rem;
     line-height: 1rem;
-    border: 1px solid var(--accent);
+    border: var(--border);
     outline: none;
     border-radius: var(--border-radius);
     padding: .5rem;

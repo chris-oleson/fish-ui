@@ -100,7 +100,7 @@ table {
     border-collapse: collapse;
     color: var(--text);
     & thead {
-        border-bottom: 1px solid var(--accent);
+        border-bottom: var(--border);
         & th {
             padding: 1rem .5rem;
         }
@@ -108,7 +108,7 @@ table {
     & tbody {
         & tr {
             cursor: pointer;
-            border-bottom: 1px solid var(--accent);
+            border-bottom: var(--border);
             transition-duration: .2s;
             &:hover, &:focus {
                 background-color: var(--accent);

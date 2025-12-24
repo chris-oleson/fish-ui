@@ -19,8 +19,5 @@ header {
     justify-content: center;
     gap: 3rem;
     padding: 0 2rem;
-    & > * {
-        width: fit-content;
-    }
 }
 </style>
