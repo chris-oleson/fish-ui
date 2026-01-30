@@ -1,8 +1,8 @@
 <template>
-    <NuxtLink v-if="to" :to="to" :disabled="disabled" :class="classes">
+    <NuxtLink v-if="to" :to="to" :disabled="disabled" :class="classes" draggable="false">
         <slot />
     </NuxtLink>
-    <button v-else :disabled="disabled" :class="classes">
+    <button v-else :disabled="disabled" :class="classes" draggable="false">
         <slot />
     </button>
 </template>
@@ -20,6 +20,8 @@ const props = defineProps({
     disabled: Boolean,
     error: Boolean,
     round: Boolean,
+    secondary: Boolean,
+    chip: Boolean
 })
 
 const classes = computed(() => ({
@@ -33,11 +35,14 @@ const classes = computed(() => ({
     disabled: props.disabled,
     error: props.error,
     round: props.round,
+    secondary: props.secondary,
+    chip: props.chip
 }))
 </script>
 
 <style scoped>
 button, a {
+    color: var(--text-primary);
     padding: .5rem .75rem;
     letter-spacing: 1.25px;
     display: flex;
@@ -49,6 +54,7 @@ button, a {
     text-transform: uppercase;
     text-decoration: inherit;
     min-width: fit-content;
+    width: fit-content;
     border: none;
     border-radius: var(--border-radius);
     transition-duration: .2s;
@@ -57,34 +63,41 @@ button, a {
     outline: none;
     cursor: pointer;
     height: fit-content;
+    background-color: var(--background);
+    box-shadow: var(--highlight-shadow);
+    &:is(:hover, :focus, .selected):not(.disabled) {
+        filter: brightness(1.2);
+    }
+    &:active:not(.disabled) {
+        filter: none;
+    }
     &.round {
         width: fit-content;
         padding: .5rem;
         border-radius: 50%;
     }
     &.primary {
-        color: white;
+        color: var(--white);
         background-color: var(--primary);
+    }
+    &.secondary {
+        background: var(--secondary);
         &:is(:hover, :focus, .selected):not(.disabled) {
-            filter: brightness(1.3);
+            filter: var(--hover-brightness);
         }
-        &:active:not(.disabled) {
-            filter: brightness(1);
-        }
+    }
+    &.error {
+        color: var(--white);
+        background-color: var(--error);
     }
     &.border {
-        color: var(--text);
         border: var(--border);
         background-color: transparent;
+        box-shadow: none;
         &:is(:hover, :focus, .selected):not(.disabled) {
-            border: 1px solid var(--text);
+            filter: none;
+            border: 1px solid var(--text-primary);
         }
-        &:active:not(.disabled) {
-            border: var(--border);
-        }
-    }
-    &.selected {
-        pointer-events: none;
     }
     &.disabled {
         opacity: .2;
@@ -94,35 +107,29 @@ button, a {
         gap: 1rem;
         padding: 1rem;
         font-size: 1.25rem;
-        line-height: 2rem;
-        .round {
-            padding: 0;
-        }
     }
     &.small {
         font-size: .75rem;
     }
     &.simple {
-        color: var(--text-accent);
+        color: var(--text-secondary);
         font-weight: 500;
         padding: 0;
         background-color: transparent;
+        box-shadow: none;
         &:is(:hover, :focus, .selected):not(.disabled) {
-            color: var(--text);
-        }
-        &:active:not(.disabled) {
-            color: var(--text-accent);
+            filter: none;
+            color: var(--text-primary);
         }
     }
-    &.error {
-        color: white;
-        background-color: var(--error);
-        &:is(:hover, :focus, .selected):not(.disabled) {
-            filter: brightness(1.3);
-        }
-        &:active:not(.disabled) {
-            filter: brightness(1);
-        }
+    &.chip {
+        padding: .25rem .5rem;
+        border-radius: 1rem;
+        border: none;
+        text-wrap: nowrap;
+        text-transform: none;
+        font-weight: 400;
+        letter-spacing: 0px;
     }
 }
 </style>

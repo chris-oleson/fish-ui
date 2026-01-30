@@ -6,6 +6,7 @@
                 <FishButton v-show="showPassword" simple title="Hide password" icon="mdi:eye-off" @click="showPassword = false"/>
                 <FishButton v-show="!showPassword" simple title="Show password" icon="mdi:eye" @click="showPassword = true"/>
             </div>
+            <p v-if="error" class="error">{{ error }}</p>
         </div>
     </label>
 
@@ -15,6 +16,7 @@
             <FishButton v-show="showPassword" simple title="Hide password" icon="mdi:eye-off" @click="showPassword = false"/>
             <FishButton v-show="!showPassword" simple title="Show password" icon="mdi:eye" @click="showPassword = true"/>
         </div>
+        <p v-if="error" class="error">{{ error }}</p>
     </div>
 </template>
 
@@ -51,19 +53,12 @@ function getType() {
 
 <style scoped>
 .text-field {
+    position: relative;
     outline: none;
-    border: var(--border);
     display: flex;
     align-items: center;
     border-radius: var(--border-radius);
-    transition-duration: .2s;
     height: fit-content;
-    width: 100%;
-    overflow: hidden;
-    &:hover, &:has(input:focus) {
-        border-color: var(--text);
-    }
-
     & div {
         margin-right: .5rem;
     }
@@ -71,14 +66,16 @@ function getType() {
         width: 100%;
         height: 2rem;
         padding: 0 .5rem;
-        color: var(--text);
-        background-color: transparent;
+        border-radius: var(--border-radius);
+        background-color: var(--slightly-dark);
+        box-shadow: var(--recessed-shadow);
         outline: none;
         border: none;
         font-size: 1rem;
         line-height: 1rem;
+
         &::placeholder {
-            color: var(--text-disabled);
+            color: var(--text-secondary);
         }
     }
     &.error {
@@ -99,12 +96,20 @@ function getType() {
 }
 
 label {
-    color: var(--text);
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
     text-wrap: nowrap;
     width: 100%;
+}
+
+p {
+    position: absolute;
+    font-size: .75rem;
+    bottom: -2.5rem;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
 </style>

@@ -12,7 +12,7 @@ header {
     z-index: 100;
     position: fixed;
     width: 100%;
-    height: var(--header-height);
+    height: 4rem;
     margin: auto;
     display: flex;
     align-items: center;

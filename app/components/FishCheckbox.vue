@@ -1,14 +1,15 @@
 <template>
 <label v-if="label">{{ label }}
-    <input v-model="modelValue" type="checkbox">
+    <input v-model="modelValue" type="checkbox" :class="{ small: small }">
 </label>
 
-<input v-else v-model="modelValue" type="checkbox">
+<input v-else v-model="modelValue" type="checkbox" :class="{ small: small }">
 </template>
 
 <script setup>
 defineProps({
     label: { type: String, default: '' },
+    small: Boolean,
 })
 const modelValue = defineModel({
     type: Boolean,
@@ -22,45 +23,59 @@ input {
     width: 2rem;
     margin: 0;
     outline: none;
-    color: var(--text);
     appearance: none;
     position: relative;
-    background-color: transparent;
-    border-radius: var(--border-radius);
-}
-
-input:before {
-    font-size: 2rem;
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border: var(--border);
+    background-color: var(--slightly-dark);
     border-radius: var(--border-radius);
     transition-duration: .2s;
-    cursor: pointer;
-    line-height: 95%;
-    text-align: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        box-shadow: var(--recessed-shadow);
+        border-radius: .5rem;
+        cursor: pointer;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 6px;
+        border-radius: .35rem;
+        background-color: var(--primary);
+        box-shadow: var(--highlight-shadow);
+        transform: scale(0);
+        transition-duration: .2s;
+        pointer-events: none;
+    }
+
+    &.small {
+        height: 1.5rem;
+        width: 1.5rem;
+        min-width: 1.5rem;
+
+        &::after {
+            inset: 4px;
+        }
+    }
+
+    &:hover::before,
+    &:focus::before {
+        border-color: var(--text-primary);
+    }
+
+    &:checked::after {
+        transform: scale(1);
+    }
 }
 
-input:hover:before,
-input:focus:before {
-    border-color: var(--text);
-}
 
-input:checked:before {
-    content: '\2713';
-}
 
 label {
-    color: var(--text);
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    width: 100%;
 }
 </style>

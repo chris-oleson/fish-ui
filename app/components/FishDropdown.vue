@@ -33,16 +33,11 @@ const modelValue = defineModel({
 
 <style scoped>
 div {
-    border: var(--border);
     border-radius: var(--border-radius);
     overflow: hidden;
     transition-duration: .2s;
     height: fit-content;
     width: 100%;
-
-    &:hover, &:has(select:focus) {
-        border-color: var(--text);
-    }
 }
 
 select {
@@ -50,7 +45,8 @@ select {
     margin: 0;
     outline: none;
     color: var(--text);
-    background-color: transparent;
+    background-color: var(--slightly-dark);
+    box-shadow: var(--recessed-shadow);
     border: none;
     padding: 0 .5rem;
     font-size: 1rem;
@@ -59,7 +55,7 @@ select {
     width: 100%;
 
     &:invalid {
-        color: var(--text-disabled);
+        color: var(--text-secondary);
     }
     &.big {
         height: 3rem;
@@ -67,7 +63,7 @@ select {
     }
     &.error {
         border-color: var(--error);
-        &::placeholder {
+        &:invalid {
             color: var(--error);
         }
     }
