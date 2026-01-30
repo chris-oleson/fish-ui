@@ -16,7 +16,7 @@ defineProps({
 
 <style scoped>
 textarea {
-    resize: vertical;
+    resize: none;
     min-height: 2rem;
     height: 10rem;
     padding: 0 .5rem;
@@ -26,16 +26,16 @@ textarea {
     border: none;
     font-size: 1rem;
     line-height: 1rem;
-    border: var(--border);
     outline: none;
     border-radius: var(--border-radius);
-    padding: .5rem;
+    background-color: var(--slightly-dark);
+    box-shadow: var(--recessed-shadow);    padding: .5rem;
     transition-duration: .2s;
     &:hover, &:focus {
         border: 1px solid var(--text);
     }
     &::placeholder {
-        color: var(--text-disabled);
+        color: var(--text-secondary);
     }
 }
 
@@ -43,8 +43,7 @@ label {
     width: 100%;
     color: var(--text);
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
     gap: 1rem;
 }
 </style>

@@ -54,7 +54,6 @@ button, a {
     text-transform: uppercase;
     text-decoration: inherit;
     min-width: fit-content;
-    width: fit-content;
     border: none;
     border-radius: var(--border-radius);
     transition-duration: .2s;
@@ -130,6 +129,7 @@ button, a {
         text-transform: none;
         font-weight: 400;
         letter-spacing: 0px;
+        width: fit-content;
     }
 }
 </style>

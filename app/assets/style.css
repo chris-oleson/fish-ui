@@ -185,58 +185,8 @@ section {
     border-radius: .5rem;
     background-color: var(--secondary);
     box-shadow: var(--highlight-shadow);
-    & p {
-        text-align: center;
-        margin: 0;
-    }
-}
-
-dialog {
-    border: none;
-    background-color: transparent;
-    outline: none;
-    padding: 0;
-    &::backdrop {
-        background-color: rgba(0, 0, 0, .5);
-        backdrop-filter: blur(.5rem);
-    }
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-}
-
-.column {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    &.small {
-        flex: 1;
-    }
-    &.big {
-        flex: 4;
-    }
-}
-
-.chip {
-    background: transparent;
-    padding: .25rem .5rem;
-    border-radius: 1rem;
-    border: 1px solid var(--text);
-    text-wrap: nowrap;
-}
-
-.markdown {
-    & h2 {
-        text-align: center;
-    }
-
-    & hr {
-        margin: 3rem 0;
+    & > * {
+        width: 100%;
     }
 }
 
