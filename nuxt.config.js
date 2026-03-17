@@ -8,5 +8,6 @@ export default defineNuxtConfig({
       '@nuxt/icon',
       '@nuxt/eslint',
       '@nuxtjs/color-mode',
+      '@nuxt/fonts',
     ],
 })

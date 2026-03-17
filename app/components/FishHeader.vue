@@ -1,8 +1,6 @@
 <template>
     <header>
-        <FishButton simple>Simple</FishButton>
-        <FishButton simple>Simple</FishButton>
-        <FishButton simple>Simple</FishButton>
+        <p>This is a header</p>
     </header>
 </template>
 

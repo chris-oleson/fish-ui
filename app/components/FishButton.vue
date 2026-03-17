@@ -9,7 +9,7 @@
 
 <script setup>
 const props = defineProps({
-    to: { type: String, default: '' },
+    to: String,
     primary: Boolean,
     border: Boolean,
     background: Boolean,
