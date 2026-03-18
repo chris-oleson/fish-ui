@@ -1,22 +1,25 @@
 :root {
-    /* Semantic color definitions */
+    /* Semantic colors */
     --primary: var(--light-blue);
     --secondary: var(--white);
-    --text-primary: var(--off-black);
+    --text-primary: var(--black);
     --text-secondary: var(--extra-dark);
     --accent: var(--dark);
     --background: var(--light-grey);
     --error: var(--light-red);
+    --success: var(--light-green);
 
-    /* Absolute color definitions */
+    /* Absolute colors */
     --light-red: hsl(0, 67%, 51%);
     --dark-red: hsl(0, 99%, 27%);
-    --dark-blue: hsl(198, 54%, 22%);
-    --light-blue: hsl(198, 69%, 32%);
+    --dark-blue: hsl(200, 54%, 22%);
+    --light-blue: hsl(200, 69%, 32%);
+    --light-green: hsl(100, 40%, 36%);
+    --dark-green: hsl(100, 40%, 20%);
     --white: hsl(0, 0%, 100%);
     --light-grey: hsl(0, 0%, 95%);
-    --dark-grey: hsl(230, 10%, 15%);
-    --off-black: hsl(230, 10%, 10%);
+    --grey: hsl(230, 10%, 15%);
+    --dark-grey: hsl(0, 0%, 10%);
     --black: hsl(0, 0%, 5%);
     --light: hsla(0, 0%, 100%, 0.3);
     --extra-light: hsla(0, 0%, 100%, 0.5);
@@ -24,11 +27,11 @@
     --dark: hsla(0, 0%, 0%, 0.3);
     --extra-dark: hsla(0, 0%, 0%, 0.6);
 
-    /* Font definitions */
+    /* Fonts */
     --font-text: 'Roboto', sans-serif;
-    --font-display: 'Wingdings', serif;
+    --font-display: 'Roboto', sans-serif;
 
-    /* Other definitions */
+    /* Misc */
     --border-radius: .5rem;
     --border: 1px solid var(--accent);
     --hover-brightness: brightness(.9);
@@ -41,9 +44,10 @@
     --text-primary: var(--white);
     --text-secondary: var(--extra-light);
     --primary: var(--dark-blue);
-    --secondary: var(--dark-grey);
-    --background: var(--off-black);
+    --secondary: var(--grey);
+    --background: var(--dark-grey);
     --error: var(--dark-red);
+    --success: var(--dark-green);
     --accent: var(--light);
     --hover-brightness: brightness(1.2);
 }
@@ -55,14 +59,11 @@
     color: var(--text-primary);
     font-family: var(--font-text);
     font-weight: 400;
+    margin: 0;
 }
 
 html {
     background-color: var(--background);
-}
-
-body {
-    margin: 0;
 }
 
 h1 {
@@ -164,7 +165,7 @@ section {
     align-items: center;
     gap: 1rem;
     padding: 1.5rem;
-    border-radius: .5rem;
+    border-radius: var(--border-radius);
     background-color: var(--secondary);
     box-shadow: var(--highlight-shadow);
     & > * {

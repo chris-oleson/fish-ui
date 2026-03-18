@@ -10,8 +10,6 @@
 <script setup>
 const props = defineProps({
     to: String,
-    primary: Boolean,
-    border: Boolean,
     background: Boolean,
     simple: Boolean,
     big: Boolean,
@@ -25,8 +23,6 @@ const props = defineProps({
 })
 
 const classes = computed(() => ({
-    primary: props.primary,
-    border: props.border,
     background: props.background,
     simple: props.simple,
     big: props.big,
@@ -42,7 +38,8 @@ const classes = computed(() => ({
 
 <style scoped>
 button, a {
-    color: var(--text-primary);
+    color: var(--white);
+    background-color: var(--primary);
     padding: .5rem .75rem;
     letter-spacing: 1.25px;
     display: flex;
@@ -62,25 +59,18 @@ button, a {
     outline: none;
     cursor: pointer;
     height: fit-content;
-    background-color: var(--background);
     box-shadow: var(--highlight-shadow);
     &:is(:hover, :focus, .selected):not(.disabled) {
         filter: brightness(1.2);
-    }
-    &:active:not(.disabled) {
-        filter: none;
     }
     &.round {
         width: fit-content;
         padding: .5rem;
         border-radius: 50%;
     }
-    &.primary {
-        color: var(--white);
-        background-color: var(--primary);
-    }
     &.secondary {
-        background: var(--secondary);
+        color: var(--text-primary);
+        background-color: var(--secondary);
         &:is(:hover, :focus, .selected):not(.disabled) {
             filter: var(--hover-brightness);
         }
@@ -88,15 +78,6 @@ button, a {
     &.error {
         color: var(--white);
         background-color: var(--error);
-    }
-    &.border {
-        border: var(--border);
-        background-color: transparent;
-        box-shadow: none;
-        &:is(:hover, :focus, .selected):not(.disabled) {
-            filter: none;
-            border: 1px solid var(--text-primary);
-        }
     }
     &.disabled {
         opacity: .2;

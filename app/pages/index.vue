@@ -24,15 +24,15 @@
                     <span>Small column</span>
                     <div class="card">
                         <span>Card</span>
-                        <FishButton primary>Primary</FishButton>
-                        <FishButton round primary><Icon name="mdi:account"/></FishButton>
+                        <FishButton>Button</FishButton>
+                        <FishButton round><Icon name="mdi:account"/></FishButton>
                         <FishButton round secondary><Icon name="mdi:account"/></FishButton>
                         <FishButton round simple><Icon name="mdi:account"/></FishButton>
-                        <FishButton primary><Icon name="mdi:account"/>Icon</FishButton>
+                        <FishButton><Icon name="mdi:account"/>Icon</FishButton>
                         <FishButton secondary>Secondary</FishButton>
                         <FishButton error>Error</FishButton>
                         <FishButton simple>Simple</FishButton>
-                        <FishButton primary disabled>Disabled Primary</FishButton>
+                        <FishButton disabled>Disabled Button</FishButton>
                         <FishButton secondary disabled>Disabled Secondary</FishButton>
                         <FishButton simple disabled>Disabled Simple</FishButton>
                     </div>
@@ -42,7 +42,7 @@
                     <span>Big column</span>
                     <div class="card">
                         <span>Card</span>
-                        <FishButton big primary>Big Primary</FishButton>
+                        <FishButton big>Big Button</FishButton>
                         <FishButton big secondary>Big Secondary</FishButton>
                         <FishButton big simple>Big Simple</FishButton>
                     </div>
@@ -60,9 +60,9 @@
                         <span>Card</span>
                         <FishRow>
                             <span style="flex: 100%;">Row</span>
-                            <FishButton primary chip>chip</FishButton>
-                            <FishButton primary chip>chip</FishButton>
-                            <FishButton primary chip>chip</FishButton>
+                            <FishButton chip>chip</FishButton>
+                            <FishButton chip>chip</FishButton>
+                            <FishButton chip>chip</FishButton>
                         </FishRow>
                     </div>
                     <div class="card">

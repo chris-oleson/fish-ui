@@ -34,15 +34,15 @@ input {
         position: absolute;
         inset: 0;
         box-shadow: var(--recessed-shadow);
-        border-radius: .5rem;
+        border-radius: var(--border-radius);
         cursor: pointer;
     }
 
     &::after {
         content: '';
         position: absolute;
-        inset: 6px;
-        border-radius: .35rem;
+        inset: 5px;
+        border-radius: calc(var(--border-radius) / 1.5);
         background-color: var(--primary);
         box-shadow: var(--highlight-shadow);
         transform: scale(0);

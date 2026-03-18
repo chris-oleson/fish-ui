@@ -22,7 +22,6 @@ const classes = computed(() => ({
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    min-width: 250px;
     &.small {
         flex: 1;
     }
