@@ -51,7 +51,11 @@
                         <FishCheckbox label="Checkbox"/>
                         <FishTextField label="Text field" placeholder="Placeholder"/>
                         <FishDropdown label="Dropdown" placeholder="Placeholder" :options="['Option 1', 'Option 2', 'Option 3']"/>
-                        <FishTextArea label="Text area" placeholder="Placeholder"/>
+
+                        <div class="card">
+                            <span>Card</span>
+                            <FishTextArea label="Text area" placeholder="Placeholder"/>
+                        </div>
                     </div>
                 </FishColumn>
                 <FishColumn>

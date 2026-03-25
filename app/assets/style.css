@@ -21,6 +21,7 @@
     --grey: hsl(230, 10%, 15%);
     --dark-grey: hsl(0, 0%, 10%);
     --black: hsl(0, 0%, 5%);
+    --slightly-light: hsla(0, 0%, 100%, 0.15);
     --light: hsla(0, 0%, 100%, 0.3);
     --extra-light: hsla(0, 0%, 100%, 0.5);
     --slightly-dark: hsla(0, 0%, 0%, 0.05);

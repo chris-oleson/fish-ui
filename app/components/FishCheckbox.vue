@@ -28,15 +28,7 @@ input {
     background-color: var(--slightly-dark);
     border-radius: var(--border-radius);
     transition-duration: .2s;
-
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        box-shadow: var(--recessed-shadow);
-        border-radius: var(--border-radius);
-        cursor: pointer;
-    }
+    box-shadow: var(--recessed-shadow);
 
     &::after {
         content: '';
@@ -58,11 +50,6 @@ input {
         &::after {
             inset: 4px;
         }
-    }
-
-    &:hover::before,
-    &:focus::before {
-        border-color: var(--text-primary);
     }
 
     &:checked::after {
