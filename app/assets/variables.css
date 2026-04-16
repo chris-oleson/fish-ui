@@ -1,0 +1,73 @@
+:root {
+    /* Absolute colors */
+    --light-red: hsl(0, 67%, 51%);
+    --dark-red: hsl(0, 99%, 27%);
+    --dark-blue: hsl(200, 54%, 22%);
+    --light-blue: hsl(200, 69%, 32%);
+    --light-green: hsl(100, 40%, 36%);
+    --dark-green: hsl(100, 40%, 20%);
+    --pink: hsl(9, 70%, 90%);
+    --maroon: hsl(9, 80%, 8%);
+    --white: hsl(0, 0%, 100%);
+    --off-white: hsl(40, 50%, 95%);
+    --brown: hsl(40, 10%, 10%);
+    --off-black: hsl(40, 10%, 7%);
+    --black: hsl(0, 0%, 5%);
+    --grey: hsl(0, 0%, 45%);
+
+    /* Shades */
+    --light: rgba(255, 255, 255, 0.3);
+    --extra-light: rgba(255, 255, 255, 0.5);
+    --slightly-dark: rgba(0, 0, 0, .08);
+    --dark: rgba(0, 0, 0, .3);
+    --extra-dark: rgba(0, 0, 0, .6);
+
+    /* Semantic colors */
+    --primary: var(--light-blue);
+    --secondary: var(--pink);
+    --text: var(--black);
+    --background: var(--off-white);
+    --muted: var(--grey);
+    --error: var(--red);
+    --paper: var(--white);
+
+    /* Fonts */
+    --font-text: 'Roboto', sans-serif;
+    --font-display: 'Roboto', sans-serif;
+
+    /* Font weights */
+    --heavy-weight: 900;
+    --bold-weight: 500;
+    --normal-weight: 300;
+
+    /* Sizes */
+    --huge: 3rem;
+    --large: 2rem;
+    --medium: 1.5rem;
+    --small: 1rem;
+    --tiny: .75rem;
+
+    /* Durations */
+    --fast: .25s;
+    --slow: .4s;
+
+    /* Shadows */
+    --highlight-shadow: 0px 2px 4px var(--extra-dark), inset 0px 1px 2px var(--light);
+    --recessed-shadow: inset 0px 3px 6px var(--extra-dark);
+    --drop-shadow: 0 5px 5px var(--dark);
+    --book-shadow: -5px 5px 10px rgba(0, 0, 0, 0.7);
+    --book-hover-shadow: -10px 10px 15px rgba(0, 0, 0, 0.4);
+
+    /* Other */
+    --border-radius: .25rem;
+}
+
+/* Dark mode */
+.dark {
+    --primary: var(--dark-blue);
+    --secondary: var(--maroon);
+    --text: var(--white);
+    --background: var(--off-black);
+    --muted: var(--grey);
+    --paper: var(--brown);
+}

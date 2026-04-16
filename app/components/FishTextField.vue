@@ -75,7 +75,7 @@ function getType() {
         line-height: 1rem;
 
         &::placeholder {
-            color: var(--text-secondary);
+            color: var(--muted);
         }
     }
     &.error {

@@ -54,7 +54,7 @@ select {
     width: 100%;
 
     &:invalid {
-        color: var(--text-secondary);
+        color: var(--muted);
     }
     &.big {
         height: 3rem;
