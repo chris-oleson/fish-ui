@@ -52,6 +52,7 @@ button, a {
     background-color: var(--primary);
     box-shadow: var(--highlight-shadow);
     text-wrap: nowrap;
+    margin: 0 auto;
     &:is(:hover, :focus, .selected):not(.disabled) {
         filter: brightness(1.2);
     }
@@ -90,6 +91,9 @@ button, a {
         filter: none;
         &:is(:hover, :focus, .selected):not(.disabled) {
             color: var(--text);
+        }
+        &:active:not(.disabled) {
+            color: var(--muted);
         }
     }
     &.chip {

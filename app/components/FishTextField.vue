@@ -1,33 +1,33 @@
 <template>
-    <label v-if="label">{{ label }}
-        <div class="text-field" :class="{'big': big, 'error': error}">
-            <input ref="textField" v-model="modelValue" :type="getType()" :placeholder="placeholder">
-            <div v-if="password">
-                <FishButton v-show="showPassword" simple title="Hide password" icon="mdi:eye-off" @click="showPassword = false"/>
-                <FishButton v-show="!showPassword" simple title="Show password" icon="mdi:eye" @click="showPassword = true"/>
-            </div>
-            <p v-if="error" class="error">{{ error }}</p>
-        </div>
-    </label>
-
-    <div v-else class="text-field" :class="{'big': big, 'error': error}">
+<label v-if="label">{{ label }}
+    <div class="text-field" :class="{ big }">
         <input ref="textField" v-model="modelValue" :type="getType()" :placeholder="placeholder">
         <div v-if="password">
             <FishButton v-show="showPassword" simple title="Hide password" icon="mdi:eye-off" @click="showPassword = false"/>
             <FishButton v-show="!showPassword" simple title="Show password" icon="mdi:eye" @click="showPassword = true"/>
         </div>
-        <p v-if="error" class="error">{{ error }}</p>
+        <span v-if="error" class="error">{{ error }}</span>
     </div>
+</label>
+
+<div v-else class="text-field" :class="{ big }">
+    <input ref="textField" v-model="modelValue" :type="getType()" :placeholder="placeholder">
+    <div v-if="password">
+        <FishButton v-show="showPassword" simple title="Hide password" icon="mdi:eye-off" @click="showPassword = false"/>
+        <FishButton v-show="!showPassword" simple title="Show password" icon="mdi:eye" @click="showPassword = true"/>
+    </div>
+    <span v-if="error" class="error">{{ error }}</span>
+</div>
 </template>
 
 <script setup>
 const showPassword = ref(false)
-const textField = ref(null)
+const textField = useTemplateRef(null)
 const modelValue = defineModel({ type: String, default: '' })
 const props = defineProps({
-    placeholder: { type: String, default: '' },
-    error: { type: String, default: '' },
-    label: { type: String, default: '' },
+    placeholder: String,
+    error: String,
+    label: String,
     password: Boolean,
     focus: Boolean,
     big: Boolean,
@@ -44,7 +44,7 @@ function getType() {
     if (props.password && !showPassword.value) {
         return 'password'
     }
-    else if (props.email) {
+    if (props.email) {
         return 'email'
     }
     return 'text'
@@ -59,6 +59,8 @@ function getType() {
     align-items: center;
     border-radius: var(--border-radius);
     height: fit-content;
+    width: 100%;
+    min-width: 100px;
     & div {
         margin-right: .5rem;
     }
@@ -71,17 +73,9 @@ function getType() {
         box-shadow: var(--recessed-shadow);
         outline: none;
         border: none;
-        font-size: 1rem;
-        line-height: 1rem;
 
         &::placeholder {
             color: var(--muted);
-        }
-    }
-    &.error {
-        border-color: var(--error);
-        & input::placeholder, & button {
-            color: var(--error);
         }
     }
     &.big {
@@ -104,10 +98,9 @@ label {
     width: 100%;
 }
 
-p {
+span {
     position: absolute;
-    font-size: .75rem;
-    bottom: -2.5rem;
+    top: 2.5rem;
     left: 0;
     right: 0;
     text-align: center;

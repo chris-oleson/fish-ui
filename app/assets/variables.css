@@ -9,9 +9,10 @@
     --pink: hsl(9, 70%, 90%);
     --maroon: hsl(9, 80%, 8%);
     --white: hsl(0, 0%, 100%);
-    --off-white: hsl(40, 50%, 95%);
+    --off-white: hsl(240, 5%, 90%);
     --brown: hsl(40, 10%, 10%);
-    --off-black: hsl(40, 10%, 7%);
+    --off-black: hsl(240, 10%, 7%);
+    --dark-grey: hsl(240, 10%, 12%);
     --black: hsl(0, 0%, 5%);
     --grey: hsl(0, 0%, 45%);
 
@@ -24,11 +25,11 @@
 
     /* Semantic colors */
     --primary: var(--light-blue);
-    --secondary: var(--pink);
+    --secondary: var(--white);
     --text: var(--black);
     --background: var(--off-white);
     --muted: var(--grey);
-    --error: var(--red);
+    --error: var(--light-red);
     --paper: var(--white);
 
     /* Fonts */
@@ -59,15 +60,16 @@
     --book-hover-shadow: -10px 10px 15px rgba(0, 0, 0, 0.4);
 
     /* Other */
-    --border-radius: .25rem;
+    --border-radius: .5rem;
 }
 
 /* Dark mode */
 .dark {
     --primary: var(--dark-blue);
-    --secondary: var(--maroon);
+    --secondary: var(--dark-grey);
     --text: var(--white);
     --background: var(--off-black);
     --muted: var(--grey);
     --paper: var(--brown);
+    --error: var(--dark-red);
 }

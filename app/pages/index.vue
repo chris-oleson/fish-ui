@@ -46,21 +46,20 @@
                         <span>Card</span>
                         <FishCheckbox label="Checkbox"/>
                         <FishTextField label="Text field" placeholder="Placeholder"/>
-                        <FishDropdown label="Dropdown" placeholder="Placeholder" :options="['Option 1', 'Option 2', 'Option 3']"/>
+                        <FishDropdown label="Dropdown" placeholder="Placeholder" :options="['Option 1', 'Option 2', 'Option 3983749082374']"/>
                     </div>
                 </FishColumn>
                 <FishColumn big>
                     <span>Big column</span>
+                    <h3>Heading 3</h3>
                     <FishRow>
                         <span style="flex: 100%;">Row</span>
                         <div class="card">
                             <span>Card</span>
-                            <FishRow>
-                                <span style="flex: 100%;">Row</span>
-                                <FishButton chip>chip</FishButton>
-                                <FishButton chip>chip</FishButton>
-                                <FishButton chip>chip</FishButton>
-                            </FishRow>
+                            <FishTextField label="Text field" placeholder="Placeholder"/>
+                            <FishDropdown label="Dropdown" placeholder="Placeholder" :options="['Option 1', 'Option 2', 'Option 39831242345234234749082374']"/>
+                            <FishCheckbox label="Checkbox"/>
+                            <FishButton>Submit</FishButton>
                         </div>
                         <div class="card">
                             <span>Card</span>
