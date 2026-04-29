@@ -3,9 +3,8 @@
     <label v-if="label" style="text-wrap: nowrap;">{{ label }}</label>
 
     <div ref="wrapper" class="input" @click="open = !open">
-        <div v-if="!modelValue.length" class="content" style="color: var(--muted);">{{ placeholder }}</div>
-        <div v-else class="content">{{ modelValue }}</div>
-        <Icon name="mdi:menu-down" style="margin-right: .25rem; margin-left: auto;"/>
+        <div class="content" :style="modelValue.length ? '' : 'color: var(--muted);'">{{ modelValue || placeholder }}</div>
+        <Icon name="mdi:menu-down"/>
 
         <div v-if="open" class="dropdown">
             <button v-for="option in options" :key="option" @click="modelValue = option">{{ option }}</button>
@@ -34,11 +33,14 @@ function handleClickOutside(event) {
         open.value = false
     }
 }
-onMounted(() => {
-    document.addEventListener('click', handleClickOutside)
-})
-onBeforeUnmount(() => {
-    document.removeEventListener('click', handleClickOutside)
+
+watch(open, (isOpen) => {
+    if (isOpen) {
+        document.addEventListener('click', handleClickOutside)
+    }
+    else {
+        document.removeEventListener('click', handleClickOutside)
+    }
 })
 </script>
 
@@ -48,7 +50,6 @@ onBeforeUnmount(() => {
     gap: 1rem;
     align-items: center;
     width: 100%;
-    min-width: 0;
 }
 
 .input {
@@ -57,19 +58,17 @@ onBeforeUnmount(() => {
     position: relative;
     cursor: pointer;
     height: 2rem;
-    width: 100%;
+    min-width: 0;
+    flex: 1;
     border-radius: var(--border-radius);
     background-color: var(--slightly-dark);
     box-shadow: var(--recessed-shadow);
 
     & .content {
         text-align: start;
-        position: absolute;
-        left: .5rem;
-        top: 0;
-        bottom: 0;
-        right: 1.5rem;
-        line-height: 2rem;
+        padding-left: .5rem;
+        min-width: 0;
+        flex: 1;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -80,13 +79,13 @@ onBeforeUnmount(() => {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
+    right: 0;
     display: flex;
     flex-direction: column;
     align-items: start;
     border-radius: var(--border-radius);
     box-shadow: var(--highlight-shadow);
-    background-color: var(--secondary);
+    background-color: var(--background);
     z-index: 10;
     max-height: 45vh;
     overflow-y: auto;
