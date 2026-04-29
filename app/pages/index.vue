@@ -26,58 +26,55 @@
                         <span>Card</span>
                         <FishButton>Button</FishButton>
                         <FishButton round><Icon name="mdi:account"/></FishButton>
-                        <FishButton round secondary><Icon name="mdi:account"/></FishButton>
                         <FishButton round simple><Icon name="mdi:account"/></FishButton>
                         <FishButton><Icon name="mdi:account"/>Icon</FishButton>
-                        <FishButton secondary>Secondary</FishButton>
                         <FishButton error>Error</FishButton>
                         <FishButton simple>Simple</FishButton>
                         <FishButton disabled>Disabled Button</FishButton>
-                        <FishButton secondary disabled>Disabled Secondary</FishButton>
                         <FishButton simple disabled>Disabled Simple</FishButton>
                     </div>
                 </FishColumn>
 
-                <FishColumn big>
-                    <span>Big column</span>
+                <FishColumn>
+                    <span>Column</span>
                     <div class="card">
                         <span>Card</span>
                         <FishButton big>Big Button</FishButton>
-                        <FishButton big secondary>Big Secondary</FishButton>
                         <FishButton big simple>Big Simple</FishButton>
                     </div>
                     <div class="card">
                         <span>Card</span>
                         <FishCheckbox label="Checkbox"/>
                         <FishTextField label="Text field" placeholder="Placeholder"/>
-                        <FishDropdown label="Dropdown" placeholder="Placeholder" :options="['Option 1', 'Option 2', 'Option 3']"/>
-
+                        <FishDropdown label="Dropdown" placeholder="Placeholder" :options="['Option 1', 'Option 2', 'Option 3983749082374']"/>
+                    </div>
+                </FishColumn>
+                <FishColumn big>
+                    <span>Big column</span>
+                    <h3>Heading 3</h3>
+                    <FishRow>
+                        <span style="flex: 100%;">Row</span>
                         <div class="card">
+                            <span>Card</span>
+                            <FishTextField label="Text field" placeholder="Placeholder"/>
+                            <FishDropdown label="Dropdown" placeholder="Placeholder" :options="['Option 1', 'Option 2', 'Option 39831242345234234749082374']"/>
+                            <FishCheckbox label="Checkbox"/>
+                            <FishButton>Submit</FishButton>
+                        </div>
+                        <div class="card">
+                            <span>Card</span>
+                            <ul>
+                                <li>This</li>
+                                <li>Is</li>
+                                <li>A</li>
+                                <li>List</li>
+                            </ul>
+                        </div>
+                            <div class="card">
                             <span>Card</span>
                             <FishTextArea label="Text area" placeholder="Placeholder"/>
                         </div>
-                    </div>
-                </FishColumn>
-                <FishColumn>
-                    <span>Column</span>
-                    <div class="card">
-                        <span>Card</span>
-                        <FishRow>
-                            <span style="flex: 100%;">Row</span>
-                            <FishButton chip>chip</FishButton>
-                            <FishButton chip>chip</FishButton>
-                            <FishButton chip>chip</FishButton>
-                        </FishRow>
-                    </div>
-                    <div class="card">
-                        <span>Card</span>
-                        <ul>
-                            <li>This</li>
-                            <li>Is</li>
-                            <li>A</li>
-                            <li>List</li>
-                        </ul>
-                    </div>
+                    </FishRow>
                 </FishColumn>
             </FishRow>
         </section>

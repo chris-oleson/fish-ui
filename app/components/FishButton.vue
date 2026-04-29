@@ -1,16 +1,11 @@
 <template>
-    <NuxtLink v-if="to" :to="to" :disabled="disabled" :class="classes" draggable="false">
-        <slot />
-    </NuxtLink>
-    <button v-else :disabled="disabled" :class="classes" draggable="false">
-        <slot />
-    </button>
+<NuxtLink v-if="to" :to="to" :disabled="disabled" :class="classes" draggable="false"><slot/></NuxtLink>
+<button v-else :disabled="disabled" :class="classes" draggable="false"><slot/></button>
 </template>
 
 <script setup>
 const props = defineProps({
     to: String,
-    background: Boolean,
     simple: Boolean,
     big: Boolean,
     small: Boolean,
@@ -18,12 +13,10 @@ const props = defineProps({
     disabled: Boolean,
     error: Boolean,
     round: Boolean,
-    secondary: Boolean,
-    chip: Boolean
+    chip: Boolean,
 })
 
 const classes = computed(() => ({
-    background: props.background,
     simple: props.simple,
     big: props.big,
     small: props.small,
@@ -31,49 +24,45 @@ const classes = computed(() => ({
     disabled: props.disabled,
     error: props.error,
     round: props.round,
-    secondary: props.secondary,
     chip: props.chip
 }))
 </script>
 
 <style scoped>
 button, a {
-    color: var(--white);
-    background-color: var(--primary);
-    padding: .5rem .75rem;
+    color: var(--text);
+    padding: 0 .75rem;
     letter-spacing: 1.25px;
     display: flex;
     gap: .5rem;
     align-items: center;
     justify-content: center;
-    font-weight: 500;
-    font-size: 1rem;
+    font-weight: var(--bold-weight);
     text-transform: uppercase;
     text-decoration: inherit;
-    min-width: fit-content;
+    width: fit-content;
+    min-height: 2rem;
     border: none;
     border-radius: var(--border-radius);
-    transition-duration: .2s;
-    line-height: 1rem;
+    transition-duration: var(--fast);
     user-select: none;
     outline: none;
     cursor: pointer;
-    height: fit-content;
+    color: var(--white);
+    background-color: var(--primary);
     box-shadow: var(--highlight-shadow);
+    text-wrap: nowrap;
+    margin: 0 auto;
     &:is(:hover, :focus, .selected):not(.disabled) {
         filter: brightness(1.2);
+    }
+    &:active:not(.disabled) {
+        filter: none;
     }
     &.round {
         width: fit-content;
         padding: .5rem;
         border-radius: 50%;
-    }
-    &.secondary {
-        color: var(--text-primary);
-        background-color: var(--secondary);
-        &:is(:hover, :focus, .selected):not(.disabled) {
-            filter: var(--hover-brightness);
-        }
     }
     &.error {
         color: var(--white);
@@ -85,32 +74,37 @@ button, a {
     }
     &.big {
         gap: 1rem;
-        padding: 1rem;
-        font-size: 1.25rem;
+        padding: 0 1.25rem;
+        min-height: 3rem;
     }
     &.small {
-        font-size: .75rem;
+        font-size: var(--tiny);
+        min-height: 1.5rem;
     }
     &.simple {
-        color: var(--text-secondary);
-        font-weight: 500;
+        color: var(--muted);
         padding: 0;
         background-color: transparent;
+        border-radius: 0;
+        position: relative;
         box-shadow: none;
+        filter: none;
         &:is(:hover, :focus, .selected):not(.disabled) {
-            filter: none;
-            color: var(--text-primary);
+            color: var(--text);
+        }
+        &:active:not(.disabled) {
+            color: var(--muted);
         }
     }
     &.chip {
-        padding: .25rem .5rem;
-        border-radius: 1rem;
+        padding: 0 .5rem;
+        border-radius: 999px;
         border: none;
         text-wrap: nowrap;
         text-transform: none;
-        font-weight: 400;
         letter-spacing: 0px;
-        width: fit-content;
+        min-height: 1.5rem;
+        font-weight: var(--normal-weight);
     }
 }
 </style>

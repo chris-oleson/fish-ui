@@ -31,11 +31,8 @@ textarea {
     background-color: var(--slightly-dark);
     box-shadow: var(--recessed-shadow);    padding: .5rem;
     transition-duration: .2s;
-    &:hover, &:focus {
-        border: 1px solid var(--text);
-    }
     &::placeholder {
-        color: var(--text-secondary);
+        color: var(--muted);
     }
 }
 
