@@ -1,7 +1,5 @@
 <template>
-    <div class="row">
-        <slot/>
-    </div>
+<div class="row"><slot/></div>
 </template>
 
 <style scoped>
@@ -10,5 +8,6 @@
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
+    margin: 0 auto;
 }
 </style>

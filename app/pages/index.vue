@@ -59,6 +59,7 @@
                             <FishTextField label="Text field" placeholder="Placeholder"/>
                             <FishDropdown label="Dropdown" placeholder="Placeholder" :options="['Option 1', 'Option 2', 'Option 39831242345234234749082374']"/>
                             <FishCheckbox label="Checkbox"/>
+                            <FishMultiSelect label="Multiselect" placeholder="Placeholder" :options="['Option 1', 'Option 2', 'Option 3']"/>
                             <FishButton>Submit</FishButton>
                         </div>
                         <div class="card">

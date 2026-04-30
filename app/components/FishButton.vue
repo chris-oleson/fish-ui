@@ -31,17 +31,16 @@ const classes = computed(() => ({
 <style scoped>
 button, a {
     color: var(--text);
-    padding: 0 .75rem;
+    padding: .5rem 1rem;
     letter-spacing: 1.25px;
     display: flex;
     gap: .5rem;
     align-items: center;
     justify-content: center;
-    font-weight: var(--bold-weight);
     text-transform: uppercase;
     text-decoration: inherit;
     width: fit-content;
-    min-height: 2rem;
+    line-height: 1rem;
     border: none;
     border-radius: var(--border-radius);
     transition-duration: var(--fast);
@@ -74,8 +73,7 @@ button, a {
     }
     &.big {
         gap: 1rem;
-        padding: 0 1.25rem;
-        min-height: 3rem;
+        padding: 1rem 1.5rem;
     }
     &.small {
         font-size: var(--tiny);
@@ -104,7 +102,7 @@ button, a {
         text-transform: none;
         letter-spacing: 0px;
         min-height: 1.5rem;
-        font-weight: var(--normal-weight);
+        margin: 0;
     }
 }
 </style>

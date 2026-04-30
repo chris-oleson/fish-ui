@@ -108,10 +108,8 @@ section {
 
 .iconify {
     color: currentColor;
-    min-height: 1.5rem;
-    min-width: 1.5rem;
-    height: 1.5rem;
-    width: 1.5rem;
+    min-height: var(--icon-size);
+    min-width: var(--icon-size);
 }
 
 .picture {
