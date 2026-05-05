@@ -62,6 +62,8 @@
     /* Other */
     --border-radius: .5rem;
     --icon-size: 2rem;
+    --header-height: 4rem;
+    --sidebar-width: 15rem;
 }
 
 /* Dark mode */

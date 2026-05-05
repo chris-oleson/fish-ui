@@ -16,10 +16,11 @@ export default defineNuxtConfig({
     ],
 
     modules: [
-        '@nuxt/icon',
-        '@nuxt/eslint',
-        '@nuxtjs/color-mode',
-        '@nuxt/fonts',
+      '@nuxt/icon',
+      '@nuxt/eslint',
+      '@nuxtjs/color-mode',
+      '@nuxt/fonts',
+      '@nuxt/image',
     ],
 
     fonts: {

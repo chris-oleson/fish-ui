@@ -14,6 +14,7 @@ const props = defineProps({
     error: Boolean,
     round: Boolean,
     chip: Boolean,
+    background: Boolean
 })
 
 const classes = computed(() => ({
@@ -24,7 +25,8 @@ const classes = computed(() => ({
     disabled: props.disabled,
     error: props.error,
     round: props.round,
-    chip: props.chip
+    chip: props.chip,
+    background: props.background
 }))
 </script>
 
@@ -40,6 +42,7 @@ button, a {
     text-transform: uppercase;
     text-decoration: inherit;
     width: fit-content;
+    height: fit-content;
     line-height: 1rem;
     border: none;
     border-radius: var(--border-radius);
@@ -51,7 +54,6 @@ button, a {
     background-color: var(--primary);
     box-shadow: var(--highlight-shadow);
     text-wrap: nowrap;
-    margin: 0 auto;
     &:is(:hover, :focus, .selected):not(.disabled) {
         filter: brightness(1.2);
     }
@@ -103,6 +105,19 @@ button, a {
         letter-spacing: 0px;
         min-height: 1.5rem;
         margin: 0;
+    }
+    &.background {
+        justify-content: start;
+        text-transform: none;
+        color: var(--muted);
+        box-shadow: none;
+        background-color: transparent;
+        padding: .5rem;
+        &:hover {
+            filter: none;
+            color: var(--text);
+            background-color: var(--muted);
+        }
     }
 }
 </style>

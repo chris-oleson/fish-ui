@@ -87,7 +87,6 @@ hr {
 
 section {
     padding: 5rem 1rem;
-    margin: 0 auto;
 
     &.secondary {
         background-color: var(--secondary);

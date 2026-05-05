@@ -1,11 +1,12 @@
 <template>
-    <div>
-        <FishHeader/>
-        <main>
-            <slot/>
-        </main>
+<div>
+    <FishHeader/>
+    <FishSidebar/>
+    <main>
+        <slot/>
         <FishFooter/>
-    </div>
+    </main>
+</div>
 </template>
 
 <style scoped>
@@ -15,6 +16,13 @@ div {
 
 main {
     min-height: 100vh;
-    padding-top: var(--header-height);
+    position: absolute;
+    top: var(--header-height);
+    left: var(--sidebar-width);
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
 }
 </style>

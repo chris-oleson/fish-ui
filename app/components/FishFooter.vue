@@ -21,6 +21,8 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--secondary);
+    box-shadow: var(--drop-shadow);
 }
 
 p {
