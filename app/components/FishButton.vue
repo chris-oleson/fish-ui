@@ -9,30 +9,33 @@ const props = defineProps({
     simple: Boolean,
     big: Boolean,
     small: Boolean,
+    secondary: Boolean,
+    background: Boolean,
     selected: Boolean,
     disabled: Boolean,
+    success: Boolean,
     error: Boolean,
     round: Boolean,
     chip: Boolean,
-    background: Boolean
 })
 
 const classes = computed(() => ({
     simple: props.simple,
     big: props.big,
     small: props.small,
+    secondary: props.secondary,
+    background: props.background,
     selected: props.selected,
     disabled: props.disabled,
+    success: props.success,
     error: props.error,
     round: props.round,
-    chip: props.chip,
-    background: props.background
+    chip: props.chip
 }))
 </script>
 
 <style scoped>
 button, a {
-    color: var(--text);
     padding: .5rem 1rem;
     letter-spacing: 1.25px;
     display: flex;
@@ -42,15 +45,15 @@ button, a {
     text-transform: uppercase;
     text-decoration: inherit;
     width: fit-content;
+    line-height: var(--small);
     height: fit-content;
-    line-height: 1rem;
     border: none;
     border-radius: var(--border-radius);
     transition-duration: var(--fast);
     user-select: none;
     outline: none;
     cursor: pointer;
-    color: var(--white);
+    color: var(--ultra-light);
     background-color: var(--primary);
     box-shadow: var(--highlight-shadow);
     text-wrap: nowrap;
@@ -66,11 +69,20 @@ button, a {
         border-radius: 50%;
     }
     &.error {
-        color: var(--white);
         background-color: var(--error);
     }
+    &.success {
+        background-color: var(--success);
+    }
+    &.secondary {
+        color: var(--text);
+        background-color: var(--secondary);
+        &:hover {
+            filter: brightness(var(--hover-brightness));
+        }
+    }
     &.disabled {
-        opacity: .2;
+        opacity: .3;
         pointer-events: none;
     }
     &.big {
@@ -79,7 +91,6 @@ button, a {
     }
     &.small {
         font-size: var(--tiny);
-        min-height: 1.5rem;
     }
     &.simple {
         color: var(--muted);
@@ -89,6 +100,7 @@ button, a {
         position: relative;
         box-shadow: none;
         filter: none;
+        font-weight: var(--bold-weight);
         &:is(:hover, :focus, .selected):not(.disabled) {
             color: var(--text);
         }
@@ -97,14 +109,12 @@ button, a {
         }
     }
     &.chip {
-        padding: 0 .5rem;
+        padding: .25rem .5rem;
         border-radius: 999px;
         border: none;
         text-wrap: nowrap;
         text-transform: none;
         letter-spacing: 0px;
-        min-height: 1.5rem;
-        margin: 0;
     }
     &.background {
         justify-content: start;

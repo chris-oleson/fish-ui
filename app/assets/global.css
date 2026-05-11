@@ -6,6 +6,7 @@
     font-weight: var(--normal-weight);
     font-size: var(--small);
     margin: 0;
+    padding: 0;
 }
 
 html {
@@ -15,30 +16,23 @@ html {
 h1 {
     font-family: var(--font-display);
     font-size: var(--huge);
-    margin-top: 3rem;
-    margin-bottom: 2rem;
     text-align: center;
 }
 
 h2 {
     font-family: var(--font-display);
     font-size: var(--large);
-    margin-top: 2rem;
-    margin-bottom: 1rem;
     text-align: center;
 }
 
 h3 {
     font-family: var(--font-display);
     font-size: var(--medium);
-    margin-top: 1rem;
-    margin-bottom: 1rem;
     text-align: center;
 }
 
 p {
-    line-height: 1.5rem;
-    margin: 1rem 0;
+    line-height: var(--large);
 }
 
 span {
@@ -86,7 +80,7 @@ hr {
 }
 
 section {
-    padding: 5rem 1rem;
+    padding: 1rem;
 
     &.secondary {
         background-color: var(--secondary);
@@ -117,4 +111,23 @@ section {
     align-items: center;
     justify-content: center;
     gap: 1rem;
+}
+
+table {
+    border-collapse: collapse;
+    & th, td {
+        border: 1px solid var(--muted);
+        padding: .5rem;
+        & > * {
+            margin: 0 auto;
+        }
+    }
+    & th {
+        font-weight: var(--bold-weight);
+    }
+}
+
+code {
+    font-family: var(--font-mono);
+    font-weight: var(--bold-weight);
 }

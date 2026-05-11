@@ -17,11 +17,14 @@
     --grey: hsl(0, 0%, 45%);
 
     /* Shades */
-    --light: rgba(255, 255, 255, 0.3);
+    --slightly-light: rgba(255, 255, 255, 0.1);
+    --light: rgba(255, 255, 255, 0.2);
     --extra-light: rgba(255, 255, 255, 0.5);
+    --ultra-light: rgba(255, 255, 255, 0.9);
     --slightly-dark: rgba(0, 0, 0, .08);
-    --dark: rgba(0, 0, 0, .3);
+    --dark: rgba(0, 0, 0, .4);
     --extra-dark: rgba(0, 0, 0, .6);
+    --ultra-dark: rgba(0, 0, 0, .9);
 
     /* Semantic colors */
     --primary: var(--light-blue);
@@ -30,11 +33,13 @@
     --background: var(--off-white);
     --muted: var(--grey);
     --error: var(--light-red);
+    --success: var(--light-green);
     --paper: var(--white);
 
     /* Fonts */
     --font-text: 'Roboto', sans-serif;
     --font-display: 'Roboto', sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
 
     /* Font weights */
     --heavy-weight: 900;
@@ -74,5 +79,6 @@
     --background: var(--off-black);
     --muted: var(--grey);
     --paper: var(--brown);
+    --success: var(--dark-green);
     --error: var(--dark-red);
 }
