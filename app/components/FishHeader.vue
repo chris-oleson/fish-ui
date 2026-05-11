@@ -2,7 +2,7 @@
 <header>
     <NuxtLink to="/">
         <NuxtImg width="40px" height="40px" src="/images/favicon.svg"/>
-        <h3 style="margin: 0;">Fish UI</h3>
+        <h3 style="margin: 0;">fishUI</h3>
     </NuxtLink>
 </header>
 </template>

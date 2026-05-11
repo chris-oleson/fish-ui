@@ -1,83 +1,27 @@
 <template>
-<div>
-    <section>
-        <span>Section</span>
-        <h1>Heading 1</h1>
-        <hr>
-        <h2>Heading 2</h2>
-        <h3>Heading 3</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-    </section>
-
-    <section>
-        <span>Section</span>
-        <h2>Heading 2</h2>
-        <FishRow>
-            <span style="flex: 100%;">Row</span>
-
-            <FishColumn small>
-                <span>Small column</span>
-                <div class="card">
-                    <span>Card</span>
-                    <FishButton>Button</FishButton>
-                    <FishButton round><Icon name="mdi:account"/></FishButton>
-                    <FishButton round simple><Icon name="mdi:account"/></FishButton>
-                    <FishButton><Icon name="mdi:account"/>Icon</FishButton>
-                    <FishButton error>Error</FishButton>
-                    <FishButton simple>Simple</FishButton>
-                    <FishButton disabled>Disabled Button</FishButton>
-                    <FishButton simple disabled>Disabled Simple</FishButton>
-                </div>
-            </FishColumn>
-
-            <FishColumn>
-                <span>Column</span>
-                <div class="card">
-                    <span>Card</span>
-                    <FishButton big>Big Button</FishButton>
-                    <FishButton big simple>Big Simple</FishButton>
-                </div>
-                <div class="card">
-                    <span>Card</span>
-                    <FishCheckbox label="Checkbox"/>
-                    <FishTextField label="Text field" placeholder="Placeholder"/>
-                    <FishDropdown label="Dropdown" placeholder="Placeholder" :options="['Option 1', 'Option 2', 'Option 3983749082374']"/>
-                </div>
-            </FishColumn>
-            <FishColumn big>
-                <span>Big column</span>
-                <h3>Heading 3</h3>
-                <FishRow>
-                    <span style="flex: 100%;">Row</span>
-                    <div class="card">
-                        <span>Card</span>
-                        <FishTextField label="Text field" placeholder="Placeholder"/>
-                        <FishDropdown label="Dropdown" placeholder="Placeholder" :options="['Option 1', 'Option 2', 'Option 39831242345234234749082374']"/>
-                        <FishCheckbox label="Checkbox"/>
-                        <FishMultiSelect label="Multiselect" placeholder="Placeholder" :options="['Option 1', 'Option 2', 'Option 3']"/>
-                        <FishButton>Submit</FishButton>
-                    </div>
-                    <div class="card">
-                        <span>Card</span>
-                        <ul>
-                            <li>This</li>
-                            <li>Is</li>
-                            <li>A</li>
-                            <li>List</li>
-                        </ul>
-                    </div>
-                        <div class="card">
-                        <span>Card</span>
-                        <FishTextArea label="Text area" placeholder="Placeholder"/>
-                    </div>
-                </FishRow>
-            </FishColumn>
-        </FishRow>
-    </section>
-</div>
+<section>
+    <p>fishUI is a simple front end design system for Nuxt.</p>
+    <p>Features:</p>
+    <ul>
+        <li>Pure CSS styling</li>
+        <li>Dark mode support</li>
+        <li>Accessibile components</li>
+        <li>Easy customization</li>
+    </ul>
+    <p>You can use this repository as a starting point for new Nuxt projects, or you can copy and paste specific components into your current project.</p>
+    <p>Your project will not be dependent on fishUI, as there is no package to install.</p>
+    <p>If you don't need every component, you can simply take what you need from this repo and leave the rest.</p>
+    <p>Customizing specific components is as simple as changing it's code or the theme variables that it depends on.</p>
+    <p>Feel free to fork this repository and make it your own!</p>
+    <hr>
+    <p>
+        I chose Nuxt because, in my experience, it is seldom known what features a project will need,
+        and Nuxt can do almost any type of website very well. It has an intuitive, opinionated API, and uses Vue
+        for fast and simple dynamic data.
+    </p>
+    <p>
+        I'm using vanilla CSS over something like Tailwind, because I find that the problem that Tailwind solves is already solved by Vue's scoped styles.
+        You're more than welcome to use Tailwind with this project if you prefer working with it, however.
+    </p>
+</section>
 </template>

@@ -19,9 +19,9 @@ const modelValue = defineModel({
 
 <style scoped>
 input {
+    display: block;
     height: 2rem;
     width: 2rem;
-    margin: 0;
     outline: none;
     appearance: none;
     position: relative;
