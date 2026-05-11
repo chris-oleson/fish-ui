@@ -3,9 +3,8 @@
     <FishColumn style="padding: 1rem; gap: .5rem;">
         <b>Components</b>
         <FishButton background to="/buttons">Buttons</FishButton>
-        <FishButton background>asdf</FishButton>
-        <FishButton background>asdf</FishButton>
-        <FishButton background>asdf</FishButton>
+        <FishButton background to="/dropdowns">Dropdowns</FishButton>
+        <FishButton background to="/checkboxes">Checkboxes</FishButton>
     </FishColumn>
 </nav>
 </template>

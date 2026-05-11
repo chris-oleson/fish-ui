@@ -77,9 +77,6 @@ button, a {
     &.secondary {
         color: var(--text);
         background-color: var(--secondary);
-        &:hover {
-            filter: brightness(var(--hover-brightness));
-        }
     }
     &.disabled {
         opacity: .3;
