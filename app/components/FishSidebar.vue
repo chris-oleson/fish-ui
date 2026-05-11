@@ -5,6 +5,7 @@
         <FishButton background to="/buttons">Buttons</FishButton>
         <FishButton background to="/dropdowns">Dropdowns</FishButton>
         <FishButton background to="/checkboxes">Checkboxes</FishButton>
+        <FishButton background to="/text-fields">Text Fields</FishButton>
     </FishColumn>
 </nav>
 </template>

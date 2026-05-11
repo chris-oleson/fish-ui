@@ -1,20 +1,24 @@
 <template>
 <label v-if="label">{{ label }}
-    <div class="text-field" :class="{ big }">
-        <input ref="textField" v-model="modelValue" :type="getType()" :placeholder="placeholder">
-        <div v-if="password">
-            <FishButton v-show="showPassword" simple title="Hide password" icon="mdi:eye-off" @click="showPassword = false"/>
-            <FishButton v-show="!showPassword" simple title="Show password" icon="mdi:eye" @click="showPassword = true"/>
+    <div class="container">
+        <div class="text-field" :class="{ big, error }">
+            <input ref="textField" v-model="modelValue" :type="fieldType" :placeholder="placeholder">
+            <div v-if="password">
+                <FishButton v-show="showPassword" simple title="Hide password" @click="showPassword = false"><Icon name="mdi:eye-off"/></FishButton>
+                <FishButton v-show="!showPassword" simple title="Show password" @click="showPassword = true"><Icon name="mdi:eye"/></FishButton>
+            </div>
         </div>
         <span v-if="error" class="error">{{ error }}</span>
     </div>
 </label>
 
-<div v-else class="text-field" :class="{ big }">
-    <input ref="textField" v-model="modelValue" :type="getType()" :placeholder="placeholder">
-    <div v-if="password">
-        <FishButton v-show="showPassword" simple title="Hide password" icon="mdi:eye-off" @click="showPassword = false"/>
-        <FishButton v-show="!showPassword" simple title="Show password" icon="mdi:eye" @click="showPassword = true"/>
+<div v-else class="container">
+    <div class="text-field" :class="{ big, error }">
+        <input ref="textField" v-model="modelValue" :type="fieldType" :placeholder="placeholder">
+        <div v-if="password">
+            <FishButton v-show="showPassword" simple title="Hide password" @click="showPassword = false"><Icon name="mdi:eye-off"/></FishButton>
+            <FishButton v-show="!showPassword" simple title="Show password" @click="showPassword = true"><Icon name="mdi:eye"/></FishButton>
+        </div>
     </div>
     <span v-if="error" class="error">{{ error }}</span>
 </div>
@@ -40,7 +44,7 @@ onMounted(() => {
     }
 })
 
-function getType() {
+const fieldType = computed(() => {
     if (props.password && !showPassword.value) {
         return 'password'
     }
@@ -48,10 +52,16 @@ function getType() {
         return 'email'
     }
     return 'text'
-}
+})
 </script>
 
 <style scoped>
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
 .text-field {
     position: relative;
     outline: none;
@@ -61,18 +71,25 @@ function getType() {
     height: fit-content;
     width: 100%;
     min-width: 100px;
+    border-radius: var(--border-radius);
+    background-color: var(--slightly-dark);
+    box-shadow: var(--recessed-shadow);
+    overflow: hidden;
+    &.error {
+        & input {
+            color: var(--error);
+        }
+    }
     & div {
-        margin-right: .5rem;
+        margin-right: .25rem;
     }
     & input {
         width: 100%;
         height: 2rem;
         padding: 0 .5rem;
-        border-radius: var(--border-radius);
-        background-color: var(--slightly-dark);
-        box-shadow: var(--recessed-shadow);
         outline: none;
         border: none;
+        background-color: transparent;
 
         &::placeholder {
             color: var(--muted);
@@ -98,11 +115,8 @@ label {
     width: 100%;
 }
 
-span {
-    position: absolute;
-    top: 2.5rem;
-    left: 0;
-    right: 0;
+.error {
     text-align: center;
+    font-size: var(--tiny);
 }
 </style>
