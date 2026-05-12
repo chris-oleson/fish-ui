@@ -81,7 +81,7 @@ hr {
 }
 
 section {
-    padding: 1rem;
+    padding: 2rem;
 
     &.secondary {
         background-color: var(--secondary);

@@ -59,7 +59,7 @@ const fieldType = computed(() => {
 .container {
     display: flex;
     flex-direction: column;
-    gap: .25rem;
+    gap: .5rem;
 }
 
 .text-field {
@@ -71,7 +71,6 @@ const fieldType = computed(() => {
     height: fit-content;
     width: 100%;
     min-width: 100px;
-    border-radius: var(--border-radius);
     background-color: var(--slightly-dark);
     box-shadow: var(--recessed-shadow);
     overflow: hidden;
@@ -117,6 +116,5 @@ label {
 
 .error {
     text-align: center;
-    font-size: var(--tiny);
 }
 </style>
