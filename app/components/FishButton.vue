@@ -56,6 +56,7 @@ button, a {
     color: var(--ultra-light);
     background-color: var(--primary);
     box-shadow: var(--highlight-shadow);
+    font-weight: var(--bold-weight);
     text-wrap: nowrap;
     &:is(:hover, :focus, .selected):not(.disabled) {
         filter: brightness(1.2);
@@ -97,7 +98,6 @@ button, a {
         position: relative;
         box-shadow: none;
         filter: none;
-        font-weight: var(--bold-weight);
         &:is(:hover, :focus, .selected):not(.disabled) {
             color: var(--text);
         }
@@ -123,7 +123,7 @@ button, a {
         &:hover {
             filter: none;
             color: var(--text);
-            background-color: var(--muted);
+            box-shadow: var(--highlight-shadow);
         }
     }
 }

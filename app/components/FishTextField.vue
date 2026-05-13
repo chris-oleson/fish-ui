@@ -3,7 +3,7 @@
     <div class="container">
         <div class="text-field" :class="{ big, error }">
             <input ref="textField" v-model="modelValue" :type="fieldType" :placeholder="placeholder">
-            <div v-if="password">
+            <div v-if="password" class="toggle-password">
                 <FishButton v-show="showPassword" simple title="Hide password" @click="showPassword = false"><Icon name="mdi:eye-off"/></FishButton>
                 <FishButton v-show="!showPassword" simple title="Show password" @click="showPassword = true"><Icon name="mdi:eye"/></FishButton>
             </div>
@@ -15,7 +15,7 @@
 <div v-else class="container">
     <div class="text-field" :class="{ big, error }">
         <input ref="textField" v-model="modelValue" :type="fieldType" :placeholder="placeholder">
-        <div v-if="password">
+        <div v-if="password" class="toggle-password">
             <FishButton v-show="showPassword" simple title="Hide password" @click="showPassword = false"><Icon name="mdi:eye-off"/></FishButton>
             <FishButton v-show="!showPassword" simple title="Show password" @click="showPassword = true"><Icon name="mdi:eye"/></FishButton>
         </div>
@@ -59,7 +59,7 @@ const fieldType = computed(() => {
 .container {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: .25rem;
 }
 
 .text-field {
@@ -84,11 +84,11 @@ const fieldType = computed(() => {
     }
     & input {
         width: 100%;
-        height: 2rem;
-        padding: 0 .5rem;
+        line-height: 2rem;
         outline: none;
         border: none;
         background-color: transparent;
+        padding: 0 .5rem;
 
         &::placeholder {
             color: var(--muted);
@@ -96,8 +96,8 @@ const fieldType = computed(() => {
     }
     &.big {
         & input {
-            height: 3rem;
             padding: 0 1rem;
+            height: 3rem;
         }
         & div {
             margin-right: 1rem;
@@ -116,5 +116,10 @@ label {
 
 .error {
     text-align: center;
+    font-size: var(--tiny);
+}
+
+.toggle-password {
+    padding-right: .25rem;
 }
 </style>

@@ -4,7 +4,7 @@
 
     <div ref="wrapper" class="input" @click="open = !open">
         <div class="content" :class="{ placeholder: !modelValue.length }">{{ modelValue || placeholder }}</div>
-        <Icon name="mdi:menu-down" style="margin-left: auto;"/>
+        <Icon name="mdi:menu-down" style="margin-left: auto; margin-right: .25rem;"/>
 
         <div v-if="open" class="dropdown">
             <button v-for="option in options" :key="option" @click="modelValue = option">{{ option }}</button>
@@ -67,7 +67,7 @@ watch(open, (isOpen) => {
     & .content {
         position: absolute;
         left: .5rem;
-        right: var(--icon-size);
+        right: 2rem;
         line-height: 2rem;
         text-align: start;
         min-width: 0;

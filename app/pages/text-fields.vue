@@ -1,6 +1,6 @@
 <template>
 <section>
-    <p>Use the {{ '<FishTextField>' }} element for text inputs.</p>
+    <p>Use the <code>{{ '<FishTextField>' }}</code> element for text inputs.</p>
         <h2 style="text-align: start; margin-top: 2rem; margin-bottom: 1rem;">Props</h2>
         <table>
             <thead>

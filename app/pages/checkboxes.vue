@@ -1,6 +1,6 @@
 <template>
   <section>
-    <p>Use the {{ '<FishCheckbox>' }} element for boolean inputs.</p>
+    <p>Use the <code>{{ '<FishCheckbox>' }}</code> element for boolean inputs.</p>
     <h2 style="text-align: start; margin-top: 2rem; margin-bottom: 1rem;">Props</h2>
     <table>
       <thead>

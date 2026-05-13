@@ -1,6 +1,6 @@
 <template>
 <section>
-    <p>Use the {{ '<FishButton>' }} element for buttons and links.</p>
+    <p>Use the <code>{{ '<FishButton>' }}</code> element for buttons and links.</p>
 
     <h2 style="text-align: start; margin-top: 2rem; margin-bottom: 1rem;">Props</h2>
     <table>
@@ -60,6 +60,12 @@
                 <td>Boolean</td>
                 <td>Styling change</td>
                 <td><FishButton small>Button</FishButton></td>
+            </tr>
+            <tr>
+                <td><code>round</code></td>
+                <td>Boolean</td>
+                <td>Styling change</td>
+                <td><FishButton round><Icon name="mdi:check"/></FishButton></td>
             </tr>
             <tr>
                 <td><code>to</code></td>
