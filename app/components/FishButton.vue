@@ -74,7 +74,7 @@ button, a {
         background-color: var(--success);
     }
     &.secondary {
-        color: var(--text);
+        color: var(--text-primary);
         background-color: var(--secondary);
     }
     &.disabled {
@@ -89,7 +89,7 @@ button, a {
         font-size: var(--tiny);
     }
     &.simple {
-        color: var(--text);
+        color: var(--text-primary);
         opacity: .5;
         padding: 0;
         background-color: transparent;

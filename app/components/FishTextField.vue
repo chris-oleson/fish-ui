@@ -83,7 +83,7 @@ label {
         background-color: transparent;
         padding: 0 .5rem;
         &::placeholder {
-            color: var(--text);
+            color: var(--text-primary);
             opacity: .5;
         }
     }

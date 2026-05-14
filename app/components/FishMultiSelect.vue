@@ -99,7 +99,7 @@ label {
 }
 
 .placeholder {
-    color: var(--muted);
+    color: var(--text-disabled);
     padding-left: 0.25rem;
 }
 
@@ -121,7 +121,7 @@ label {
 }
 
 .empty {
-    color: var(--muted);
+    color: var(--text-secondary);
     padding: 0.25rem;
 }
 </style>

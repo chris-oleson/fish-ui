@@ -38,7 +38,7 @@ input {
     position: relative;
     background-color: var(--slightly-dark);
     border-radius: var(--border-radius);
-    transition-duration: .2s;
+    transition-duration: var(--fast);
     box-shadow: var(--recessed-shadow);
 
     &::after {
@@ -49,7 +49,7 @@ input {
         background-color: var(--primary);
         box-shadow: var(--highlight-shadow);
         transform: scale(0);
-        transition-duration: .2s;
+        transition-duration: var(--fast);
         pointer-events: none;
     }
 

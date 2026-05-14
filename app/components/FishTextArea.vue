@@ -20,7 +20,7 @@ textarea {
     min-height: 2rem;
     height: 10rem;
     padding: 0 .5rem;
-    color: var(--text);
+    color: var(--text-primary);
     background-color: var(--background);
     outline: none;
     border: none;
@@ -32,13 +32,13 @@ textarea {
     box-shadow: var(--recessed-shadow);    padding: .5rem;
     transition-duration: .2s;
     &::placeholder {
-        color: var(--muted);
+        color: var(--text-disabled);
     }
 }
 
 label {
     width: 100%;
-    color: var(--text);
+    color: var(--text-primary);
     display: flex;
     flex-direction: column;
     gap: 1rem;

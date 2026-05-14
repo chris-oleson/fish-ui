@@ -18,7 +18,7 @@
 
     /* Shades */
     --slightly-light: rgba(255, 255, 255, 0.1);
-    --light: rgba(255, 255, 255, 0.2);
+    --light: rgba(255, 255, 255, 0.3);
     --extra-light: rgba(255, 255, 255, 0.5);
     --ultra-light: rgba(255, 255, 255, 0.9);
     --slightly-dark: rgba(0, 0, 0, .1);
@@ -29,9 +29,10 @@
     /* Semantic colors */
     --primary: var(--light-blue);
     --secondary: var(--white);
-    --text: var(--black);
+    --text-primary: var(--ultra-dark);
+    --text-secondary: var(--extra-dark);
+    --text-disabled: var(--dark);
     --background: var(--off-white);
-    --muted: var(--slightly-dark);
     --error: var(--light-red);
     --success: var(--light-green);
 
@@ -74,9 +75,10 @@
 .dark {
     --primary: var(--dark-blue);
     --secondary: var(--dark-grey);
-    --text: var(--white);
+    --text-primary: var(--ultra-light);
+    --text-secondary: var(--extra-light);
+    --text-disabled: var(--light);
     --background: var(--off-black);
-    --muted: var(--slightly-light);
     --success: var(--dark-green);
     --error: var(--dark-red);
 }

@@ -2,7 +2,7 @@
 * {
     box-sizing: border-box;
     font-family: var(--font-text);
-    color: var(--text);
+    color: var(--text-primary);
     font-weight: var(--normal-weight);
     font-size: var(--small);
     margin: 0;
@@ -52,7 +52,7 @@ s {
 }
 
 a {
-    color: var(--muted);
+    color: var(--text-secondary);
     transition-duration: var(--fast);
     text-align: center;
 
@@ -76,7 +76,7 @@ ul {
 
 hr {
     border: none;
-    border-bottom: 1px solid var(--muted);
+    border-bottom: 1px solid var(--text-disabled);
     margin: 1rem 0;
 }
 
@@ -116,11 +116,14 @@ section {
 
 table {
     border-collapse: collapse;
-    & th, td {
-        border: 1px solid var(--muted);
+
+    & th,
+    td {
+        border: 1px solid var(--text-disabled);
         padding: .5rem;
         vertical-align: top;
     }
+
     & th {
         font-weight: var(--bold-weight);
     }
