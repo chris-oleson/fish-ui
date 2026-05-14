@@ -119,6 +119,7 @@ table {
     & th, td {
         border: 1px solid var(--muted);
         padding: .5rem;
+        vertical-align: top;
         & > * {
             margin: 0 auto;
         }

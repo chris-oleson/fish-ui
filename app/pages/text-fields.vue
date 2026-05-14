@@ -34,7 +34,7 @@
                     <td><code>error</code></td>
                     <td>String</td>
                     <td>Displays an error message below the field</td>
-                    <td><FishTextField error="This is an error" /></td>
+                    <td><FishTextField label="Label" error="This is an error" /></td>
                 </tr>
                 <tr>
                     <td><code>password</code></td>
@@ -52,7 +52,7 @@
                     <td><code>big</code></td>
                     <td>Boolean</td>
                     <td>Styling change</td>
-                    <td><FishTextField big placeholder="Placeholder..." /></td>
+                    <td><FishTextField big /></td>
                 </tr>
                 <tr>
                     <td><code>focus</code></td>

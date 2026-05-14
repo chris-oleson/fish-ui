@@ -1,26 +1,15 @@
 <template>
-<label v-if="label">{{ label }}
-    <div class="container">
-        <div class="text-field" :class="{ big, error }">
-            <input ref="textField" v-model="modelValue" :type="fieldType" :placeholder="placeholder">
-            <div v-if="password" class="toggle-password">
-                <FishButton v-show="showPassword" simple title="Hide password" @click="showPassword = false"><Icon name="mdi:eye-off"/></FishButton>
-                <FishButton v-show="!showPassword" simple title="Show password" @click="showPassword = true"><Icon name="mdi:eye"/></FishButton>
-            </div>
+<div class="text-field-container" :class="{ big, error }">
+    <label v-if="label" :for="formId">{{ label }}</label>
+    <div style="display: flex; flex-direction: column; gap: .5rem; width: 100%;">
+        <div class="text-field">
+            <input :id="formId" ref="textField" v-model="modelValue" :type="fieldType" :placeholder="placeholder">
+            <FishButton v-if="password" class="toggle-password" simple title="Hide password" @click="showPassword = !showPassword">
+                <Icon :name="showPassword ? 'mdi:eye-off' : 'mdi:eye'"/>
+            </FishButton>
         </div>
-        <span v-if="error" class="error">{{ error }}</span>
+        <span v-if="error">{{ error }}</span>
     </div>
-</label>
-
-<div v-else class="container">
-    <div class="text-field" :class="{ big, error }">
-        <input ref="textField" v-model="modelValue" :type="fieldType" :placeholder="placeholder">
-        <div v-if="password" class="toggle-password">
-            <FishButton v-show="showPassword" simple title="Hide password" @click="showPassword = false"><Icon name="mdi:eye-off"/></FishButton>
-            <FishButton v-show="!showPassword" simple title="Show password" @click="showPassword = true"><Icon name="mdi:eye"/></FishButton>
-        </div>
-    </div>
-    <span v-if="error" class="error">{{ error }}</span>
 </div>
 </template>
 
@@ -37,6 +26,8 @@ const props = defineProps({
     big: Boolean,
     email: Boolean
 })
+
+const formId = useId();
 
 onMounted(() => {
     if (props.focus) {
@@ -56,10 +47,13 @@ const fieldType = computed(() => {
 </script>
 
 <style scoped>
-.container {
+.text-field-container {
     display: flex;
-    flex-direction: column;
-    gap: .25rem;
+    gap: .5rem;
+}
+
+label {
+    line-height: 2rem;
 }
 
 .text-field {
@@ -69,7 +63,6 @@ const fieldType = computed(() => {
     align-items: center;
     border-radius: var(--border-radius);
     height: fit-content;
-    width: 100%;
     min-width: 100px;
     background-color: var(--slightly-dark);
     box-shadow: var(--recessed-shadow);
@@ -79,47 +72,40 @@ const fieldType = computed(() => {
             color: var(--error);
         }
     }
-    & div {
-        margin-right: .25rem;
+    & .toggle-password {
+        margin-right: .5rem;
     }
     & input {
         width: 100%;
-        line-height: 2rem;
+        height: 2rem;
         outline: none;
         border: none;
         background-color: transparent;
         padding: 0 .5rem;
-
         &::placeholder {
             color: var(--muted);
         }
     }
-    &.big {
-        & input {
-            padding: 0 1rem;
-            height: 3rem;
-        }
-        & div {
-            margin-right: 1rem;
-        }
+}
+
+.big {
+    & input {
+        padding: 0 1rem;
+        height: 3rem;
+    }
+    & .toggle-password {
+        margin-right: 1rem;
+    }
+    & label {
+        line-height: 3rem;
     }
 }
 
-label {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    text-wrap: nowrap;
-    width: 100%;
-}
-
 .error {
-    text-align: center;
-    font-size: var(--tiny);
-}
-
-.toggle-password {
-    padding-right: .25rem;
+    & span {
+        text-align: center;
+        font-size: var(--tiny);
+        color: var(--error);
+    }
 }
 </style>

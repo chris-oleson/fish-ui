@@ -1,9 +1,8 @@
 <template>
-<label v-if="label">{{ label }}
-    <input v-model="modelValue" type="checkbox" :class="{ small: small }">
-</label>
-
-<input v-else v-model="modelValue" type="checkbox" :class="{ small: small }">
+<div class="checkbox-container">
+    <label v-if="label" :for="formId">{{ label }}</label>
+    <input :id="formId" v-model="modelValue" type="checkbox" :class="{ small: small }">
+</div>
 </template>
 
 <script setup>
@@ -15,9 +14,20 @@ const modelValue = defineModel({
     type: Boolean,
     default: false
 })
+
+const formId = useId()
 </script>
 
 <style scoped>
+.checkbox-container {
+    display: flex;
+    gap: .5rem;
+}
+
+label {
+    line-height: 2rem;
+}
+
 input {
     display: block;
     height: 2rem;
@@ -55,14 +65,5 @@ input {
     &:checked::after {
         transform: scale(1);
     }
-}
-
-
-
-label {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
 }
 </style>
