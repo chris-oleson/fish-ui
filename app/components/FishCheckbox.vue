@@ -26,12 +26,13 @@ const formId = useId()
 
 label {
     line-height: 2rem;
+    width: 100%;
 }
 
 input {
     display: block;
-    height: 2rem;
-    width: 2rem;
+    min-height: 2rem;
+    min-width: 2rem;
     outline: none;
     appearance: none;
     position: relative;
@@ -53,8 +54,7 @@ input {
     }
 
     &.small {
-        height: 1.5rem;
-        width: 1.5rem;
+        min-height: 1.5rem;
         min-width: 1.5rem;
 
         &::after {

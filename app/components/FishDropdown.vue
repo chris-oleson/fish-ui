@@ -71,7 +71,6 @@ watch(open, (isOpen) => {
         line-height: 2rem;
         text-align: start;
         min-width: 0;
-        flex: 1;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -79,7 +78,7 @@ watch(open, (isOpen) => {
     }
 
     & .placeholder {
-        color: var(--muted);
+        opacity: .5;
     }
 }
 
@@ -107,13 +106,13 @@ watch(open, (isOpen) => {
         width: 100%;
         text-align: start;
         transition-duration: var(--fast);
-        color: var(--muted);
+        opacity: .5;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
 
         &:hover, &:focus {
-            color: var(--text);
+            opacity: 1;
         }
     }
 }

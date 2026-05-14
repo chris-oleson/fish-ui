@@ -1,16 +1,16 @@
 <template>
-<div class="text-field-container" :class="{ big, error }">
-    <label v-if="label" :for="formId">{{ label }}</label>
-    <div style="display: flex; flex-direction: column; gap: .5rem; width: 100%;">
-        <div class="text-field">
-            <input :id="formId" ref="textField" v-model="modelValue" :type="fieldType" :placeholder="placeholder">
-            <FishButton v-if="password" class="toggle-password" simple title="Hide password" @click="showPassword = !showPassword">
-                <Icon :name="showPassword ? 'mdi:eye-off' : 'mdi:eye'"/>
-            </FishButton>
+    <div class="text-field-container" :class="{ big, error }">
+        <label v-if="label" :for="formId">{{ label }}</label>
+        <div style="display: flex; flex-direction: column; gap: .5rem; width: 100%;">
+            <div class="text-field">
+                <input :id="formId" ref="textField" v-model="modelValue" :type="fieldType" :placeholder="placeholder">
+                <FishButton v-if="password" class="toggle-password" simple title="Hide password" @click="showPassword = !showPassword">
+                    <Icon :name="showPassword ? 'mdi:eye-off' : 'mdi:eye'"/>
+                </FishButton>
+            </div>
+            <span v-if="error">{{ error }}</span>
         </div>
-        <span v-if="error">{{ error }}</span>
     </div>
-</div>
 </template>
 
 <script setup>
@@ -83,7 +83,8 @@ label {
         background-color: transparent;
         padding: 0 .5rem;
         &::placeholder {
-            color: var(--muted);
+            color: var(--text);
+            opacity: .5;
         }
     }
 }
@@ -102,6 +103,10 @@ label {
 }
 
 .error {
+    & input {
+        color: var(--error);
+    }
+
     & span {
         text-align: center;
         font-size: var(--tiny);

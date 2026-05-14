@@ -28,7 +28,7 @@
                     <td><code>placeholder</code></td>
                     <td>String</td>
                     <td>Text shown when the field is empty</td>
-                    <td><FishTextField placeholder="Placeholder..." /></td>
+                    <td><FishTextField placeholder="Placeholder" /></td>
                 </tr>
                 <tr>
                     <td><code>error</code></td>
@@ -82,10 +82,6 @@
                 <tr>
                     <td>--slightly-dark</td>
                     <td>Background color of the input field</td>
-                </tr>
-                <tr>
-                    <td>--muted</td>
-                    <td>Placeholder text color</td>
                 </tr>
             </tbody>
         </table>

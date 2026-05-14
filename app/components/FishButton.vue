@@ -10,7 +10,6 @@ const props = defineProps({
     big: Boolean,
     small: Boolean,
     secondary: Boolean,
-    background: Boolean,
     selected: Boolean,
     disabled: Boolean,
     success: Boolean,
@@ -24,7 +23,6 @@ const classes = computed(() => ({
     big: props.big,
     small: props.small,
     secondary: props.secondary,
-    background: props.background,
     selected: props.selected,
     disabled: props.disabled,
     success: props.success,
@@ -91,7 +89,8 @@ button, a {
         font-size: var(--tiny);
     }
     &.simple {
-        color: var(--muted);
+        color: var(--text);
+        opacity: .5;
         padding: 0;
         background-color: transparent;
         border-radius: 0;
@@ -99,10 +98,10 @@ button, a {
         box-shadow: none;
         filter: none;
         &:is(:hover, :focus, .selected):not(.disabled) {
-            color: var(--text);
+            opacity: 1;
         }
         &:active:not(.disabled) {
-            color: var(--muted);
+            opacity: .5;
         }
     }
     &.chip {
@@ -112,19 +111,6 @@ button, a {
         text-wrap: nowrap;
         text-transform: none;
         letter-spacing: 0px;
-    }
-    &.background {
-        justify-content: start;
-        text-transform: none;
-        color: var(--muted);
-        box-shadow: none;
-        background-color: transparent;
-        padding: .5rem;
-        &:hover {
-            filter: none;
-            color: var(--text);
-            box-shadow: var(--highlight-shadow);
-        }
     }
 }
 </style>

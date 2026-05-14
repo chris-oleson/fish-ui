@@ -21,7 +21,7 @@
     --light: rgba(255, 255, 255, 0.2);
     --extra-light: rgba(255, 255, 255, 0.5);
     --ultra-light: rgba(255, 255, 255, 0.9);
-    --slightly-dark: rgba(0, 0, 0, .08);
+    --slightly-dark: rgba(0, 0, 0, .1);
     --dark: rgba(0, 0, 0, .4);
     --extra-dark: rgba(0, 0, 0, .6);
     --ultra-dark: rgba(0, 0, 0, .9);
@@ -31,10 +31,9 @@
     --secondary: var(--white);
     --text: var(--black);
     --background: var(--off-white);
-    --muted: var(--grey);
+    --muted: var(--slightly-dark);
     --error: var(--light-red);
     --success: var(--light-green);
-    --paper: var(--white);
 
     /* Fonts */
     --font-text: 'Roboto', sans-serif;
@@ -77,8 +76,7 @@
     --secondary: var(--dark-grey);
     --text: var(--white);
     --background: var(--off-black);
-    --muted: var(--grey);
-    --paper: var(--brown);
+    --muted: var(--slightly-light);
     --success: var(--dark-green);
     --error: var(--dark-red);
 }

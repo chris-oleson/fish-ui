@@ -98,10 +98,6 @@
                 <td>Text color of default button</td>
             </tr>
             <tr>
-                <td>--muted</td>
-                <td>Text color of simple button</td>
-            </tr>
-            <tr>
                 <td>--text</td>
                 <td>Text color of secondary button and hovered simple button</td>
             </tr>

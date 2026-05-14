@@ -68,10 +68,6 @@
                     <td>Background color of the open dropdown</td>
                 </tr>
                 <tr>
-                    <td>--muted</td>
-                    <td>Placeholder text color and unselected option color</td>
-                </tr>
-                <tr>
                     <td>--text</td>
                     <td>Option color on hover/focus</td>
                 </tr>
