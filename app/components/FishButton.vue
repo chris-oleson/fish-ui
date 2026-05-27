@@ -74,7 +74,7 @@ button, a {
         background-color: var(--success);
     }
     &.secondary {
-        color: var(--text);
+        color: var(--text-primary);
         background-color: var(--secondary);
     }
     &.disabled {
@@ -89,8 +89,7 @@ button, a {
         font-size: var(--tiny);
     }
     &.simple {
-        color: var(--text);
-        opacity: .5;
+        color: var(--text-secondary);
         padding: 0;
         background-color: transparent;
         border-radius: 0;
@@ -98,10 +97,10 @@ button, a {
         box-shadow: none;
         filter: none;
         &:is(:hover, :focus, .selected):not(.disabled) {
-            opacity: 1;
+            color: var(--text-primary);
         }
         &:active:not(.disabled) {
-            opacity: .5;
+            color: var(--text-secondary);
         }
     }
     &.chip {
@@ -111,6 +110,7 @@ button, a {
         text-wrap: nowrap;
         text-transform: none;
         letter-spacing: 0px;
+        gap: .25rem;
     }
 }
 </style>

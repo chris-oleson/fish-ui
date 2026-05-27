@@ -7,9 +7,9 @@
           <input
             type="color"
             :value="token.state.value"
-            @input="update(token, $event.target.value)"
             class="color-input"
-          />
+            @input="update(token, $event.target.value)"
+          >
         </div>
         <div class="token-info">
           <span class="token-label">{{ token.label }}</span>
@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-const tokenKeys = ['primary', 'secondary', 'text', 'background', 'muted', 'error', 'success']
+const tokenKeys = ['primary', 'secondary', 'text-primary', 'background', 'text-secondary', 'error', 'success']
 
 // Read the resolved value of a CSS variable from :root, converting to hex
 // since <input type="color"> requires hex.
@@ -82,7 +82,7 @@ function setCSSVar(key, value) {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--muted);
+  color: var(--text-secondary);
   margin: 0 0 0.5rem;
 }
 
@@ -101,7 +101,7 @@ function setCSSVar(key, value) {
   transition: background 0.15s;
 }
 .token-row:hover {
-  background: color-mix(in srgb, var(--muted) 10%, transparent);
+  background: color-mix(in srgb, var(--text-secondary) 10%, transparent);
 }
 
 .picker-wrap {
@@ -110,7 +110,7 @@ function setCSSVar(key, value) {
   height: 28px;
   border-radius: 6px;
   overflow: hidden;
-  border: 1.5px solid color-mix(in srgb, var(--muted) 30%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--text-secondary) 30%, transparent);
   flex-shrink: 0;
   cursor: pointer;
 }
@@ -142,19 +142,19 @@ function setCSSVar(key, value) {
 .token-label {
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--text);
+  color: var(--text-primary);
 }
 
 .token-var {
   font-size: 0.65rem;
   font-family: monospace;
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 
 .token-hex {
   font-size: 0.72rem;
   font-family: monospace;
-  color: var(--muted);
+  color: var(--text-secondary);
   letter-spacing: 0.04em;
 }
 

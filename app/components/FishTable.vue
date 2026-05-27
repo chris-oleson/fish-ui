@@ -98,7 +98,7 @@ const sortIcon = computed(() => {
 table {
     width: 100%;
     border-collapse: collapse;
-    color: var(--text);
+    color: var(--text-primary);
     & thead {
         border-bottom: var(--border);
         & th {

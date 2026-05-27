@@ -43,6 +43,12 @@
                     <td><FishTextField password/></td>
                 </tr>
                 <tr>
+                    <td><code>search</code></td>
+                    <td>Boolean</td>
+                    <td>Adds a search icon</td>
+                    <td><FishTextField search/></td>
+                </tr>
+                <tr>
                     <td><code>email</code></td>
                     <td>Boolean</td>
                     <td>Sets input type to email</td>
@@ -58,7 +64,7 @@
                     <td><code>focus</code></td>
                     <td>Boolean</td>
                     <td>Autofocuses the field on mount</td>
-                    <td>N/A</td>
+                    <td><FishTextField focus /></td>
                 </tr>
             </tbody>
         </table>

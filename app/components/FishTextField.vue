@@ -1,21 +1,22 @@
 <template>
-    <div class="text-field-container" :class="{ big, error }">
-        <label v-if="label" :for="formId">{{ label }}</label>
-        <div style="display: flex; flex-direction: column; gap: .5rem; width: 100%;">
-            <div class="text-field">
-                <input :id="formId" ref="textField" v-model="modelValue" :type="fieldType" :placeholder="placeholder">
+    <div class="text-field-container">
+        <label v-if="label" :for="id">{{ label }}</label>
+        <div class="error-container">
+            <div class="text-field" :class="{ big }">
+                <input :id="id" ref="textField" v-model="modelValue" :type="getType()" :placeholder="placeholder" class="text-field" :class="{ error, search, password }">
+                <Icon v-if="search" class="search-icon" name="mdi:magnify"/>
                 <FishButton v-if="password" class="toggle-password" simple title="Hide password" @click="showPassword = !showPassword">
                     <Icon :name="showPassword ? 'mdi:eye-off' : 'mdi:eye'"/>
                 </FishButton>
             </div>
-            <span v-if="error">{{ error }}</span>
+            <span v-if="error" class="error-message">{{ error }}</span>
         </div>
     </div>
 </template>
 
 <script setup>
 const showPassword = ref(false)
-const textField = useTemplateRef(null)
+const textField = useTemplateRef('textField')
 const modelValue = defineModel({ type: String, default: '' })
 const props = defineProps({
     placeholder: String,
@@ -24,10 +25,11 @@ const props = defineProps({
     password: Boolean,
     focus: Boolean,
     big: Boolean,
-    email: Boolean
+    email: Boolean,
+    search: Boolean
 })
 
-const formId = useId();
+const id = useId();
 
 onMounted(() => {
     if (props.focus) {
@@ -35,7 +37,7 @@ onMounted(() => {
     }
 })
 
-const fieldType = computed(() => {
+function getType() {
     if (props.password && !showPassword.value) {
         return 'password'
     }
@@ -43,17 +45,14 @@ const fieldType = computed(() => {
         return 'email'
     }
     return 'text'
-})
+}
 </script>
 
 <style scoped>
 .text-field-container {
     display: flex;
-    gap: .5rem;
-}
-
-label {
-    line-height: 2rem;
+    gap: 1rem;
+    flex: 1;
 }
 
 .text-field {
@@ -62,55 +61,72 @@ label {
     display: flex;
     align-items: center;
     border-radius: var(--border-radius);
-    height: fit-content;
-    min-width: 100px;
-    background-color: var(--slightly-dark);
-    box-shadow: var(--recessed-shadow);
-    overflow: hidden;
-    &.error {
-        & input {
-            color: var(--error);
-        }
-    }
-    & .toggle-password {
-        margin-right: .5rem;
-    }
     & input {
+        border-radius: var(--border-radius);
+        background-color: var(--slightly-dark);
+        box-shadow: var(--recessed-shadow);
         width: 100%;
-        height: 2rem;
+        padding: 0 .5rem;
         outline: none;
         border: none;
-        background-color: transparent;
-        padding: 0 .5rem;
+        line-height: 2rem;
+
         &::placeholder {
-            color: var(--text);
-            opacity: .5;
+            color: var(--text-disabled);
         }
     }
+    &:has(input:focus-visible) {
+        outline: 1px solid var(--text-disabled);
+    }
+    &.error {
+        outline: 1px solid var(--error);
+    }
+}
+
+.search, .password {
+    padding-right: 2rem !important;
+}
+
+.search-icon {
+    color: var(--text-disabled);
+    position: absolute;
+    right: .25rem;
+    pointer-events: none;
+}
+
+.toggle-password {
+    position: absolute !important;
+    right: .25rem;
+}
+
+label {
+    text-wrap: nowrap;
+    line-height: 2rem;
+}
+
+.error-message {
+    color: var(--error);
+    font-size: var(--tiny);
+}
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    flex: 1;
 }
 
 .big {
     & input {
+        height: var(--huge);
         padding: 0 1rem;
-        height: 3rem;
     }
-    & .toggle-password {
-        margin-right: 1rem;
+    & .search, .toggle-password {
+        right: .5rem;
     }
     & label {
         line-height: 3rem;
     }
 }
 
-.error {
-    & input {
-        color: var(--error);
-    }
-
-    & span {
-        text-align: center;
-        font-size: var(--tiny);
-        color: var(--error);
-    }
-}
 </style>

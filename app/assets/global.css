@@ -2,7 +2,7 @@
 * {
     box-sizing: border-box;
     font-family: var(--font-text);
-    color: var(--text);
+    color: var(--text-primary);
     font-weight: var(--normal-weight);
     font-size: var(--small);
     margin: 0;
@@ -16,19 +16,16 @@ html {
 h1 {
     font-family: var(--font-display);
     font-size: var(--huge);
-    text-align: center;
 }
 
 h2 {
     font-family: var(--font-display);
     font-size: var(--large);
-    text-align: center;
 }
 
 h3 {
     font-family: var(--font-display);
     font-size: var(--medium);
-    text-align: center;
 }
 
 p {
@@ -52,7 +49,7 @@ s {
 }
 
 a {
-    color: var(--muted);
+    color: var(--text-secondary);
     transition-duration: var(--fast);
     text-align: center;
 
@@ -76,7 +73,7 @@ ul {
 
 hr {
     border: none;
-    border-bottom: 1px solid var(--muted);
+    border-bottom: 1px solid var(--text-secondary);
     margin: 1rem 0;
 }
 
@@ -101,6 +98,7 @@ section {
 }
 
 .iconify {
+    display: block;
     color: currentColor;
     min-height: var(--icon-size);
     min-width: var(--icon-size);
@@ -116,11 +114,14 @@ section {
 
 table {
     border-collapse: collapse;
-    & th, td {
-        border: 1px solid var(--muted);
+
+    & th,
+    td {
+        border: 1px solid var(--text-disabled);
         padding: .5rem;
         vertical-align: top;
     }
+
     & th {
         font-weight: var(--bold-weight);
     }

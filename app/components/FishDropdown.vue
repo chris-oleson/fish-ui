@@ -1,10 +1,10 @@
 <template>
 <div class="container">
-    <label v-if="label" style="text-wrap: nowrap;">{{ label }}</label>
+    <label v-if="label" :for="inputId" style="text-wrap: nowrap;">{{ label }}</label>
 
-    <div ref="wrapper" class="input" @click="open = !open">
+    <div :id="inputId" ref="wrapper" class="input" @click="open = !open">
         <div class="content" :class="{ placeholder: !modelValue.length }">{{ modelValue || placeholder }}</div>
-        <Icon name="mdi:menu-down" style="margin-left: auto; margin-right: .25rem;"/>
+        <Icon name="mdi:menu-down" style="margin-left: auto;"/>
 
         <div v-if="open" class="dropdown">
             <button v-for="option in options" :key="option" @click="modelValue = option">{{ option }}</button>
@@ -19,6 +19,8 @@ defineProps({
     placeholder: String,
     options: Array
 })
+
+const inputId = useId()
 
 const modelValue = defineModel({
     type: [String, Number],
@@ -78,7 +80,7 @@ watch(open, (isOpen) => {
     }
 
     & .placeholder {
-        opacity: .5;
+        color: var(--text-disabled);
     }
 }
 
@@ -106,13 +108,13 @@ watch(open, (isOpen) => {
         width: 100%;
         text-align: start;
         transition-duration: var(--fast);
-        opacity: .5;
+        color: var(--text-secondary);
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
 
         &:hover, &:focus {
-            opacity: 1;
+            color: var(--text-primary);
         }
     }
 }
