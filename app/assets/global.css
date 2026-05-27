@@ -73,7 +73,7 @@ ul {
 
 hr {
     border: none;
-    border-bottom: 1px solid var(--text-secondary);
+    border-bottom: 1px solid var(--text-disabled);
     margin: 1rem 0;
 }
 

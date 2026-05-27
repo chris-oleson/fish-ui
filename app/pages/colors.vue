@@ -77,15 +77,6 @@ function setCSSVar(key, value) {
   padding: 1.5rem;
 }
 
-.title {
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text-secondary);
-  margin: 0 0 0.5rem;
-}
-
 .token-list {
   display: flex;
   flex-direction: column;

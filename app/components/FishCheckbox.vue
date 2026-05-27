@@ -42,7 +42,7 @@ input {
     position: relative;
     background-color: var(--slightly-dark);
     border-radius: var(--border-radius);
-    transition-duration: .2s;
+    transition-duration: var(--fast);
     box-shadow: var(--recessed-shadow);
 
     &::after {
