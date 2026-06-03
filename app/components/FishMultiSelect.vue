@@ -99,7 +99,7 @@ label {
 }
 
 .placeholder {
-    color: var(--text-disabled);
+    color: var(--text-secondary);
     padding-left: 0.25rem;
 }
 

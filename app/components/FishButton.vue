@@ -51,7 +51,7 @@ button, a {
     user-select: none;
     outline: none;
     cursor: pointer;
-    color: var(--ultra-light);
+    color: var(--white);
     background-color: var(--primary);
     box-shadow: var(--highlight-shadow);
     font-weight: var(--bold-weight);

@@ -80,7 +80,7 @@ watch(open, (isOpen) => {
     }
 
     & .placeholder {
-        color: var(--text-disabled);
+        color: var(--text-secondary);
     }
 }
 

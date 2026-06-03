@@ -15,7 +15,7 @@
     <p>Feel free to fork this repository and make it your own!</p>
     <hr>
     <p>
-        I chose Nuxt because, in my experience, it is seldom known what features a project will need,
+        I chose Nuxt because in my experience, you never know what features a project will need,
         and Nuxt can do almost any type of website very well. It has an intuitive, opinionated API, and uses Vue
         for fast and simple dynamic data.
     </p>

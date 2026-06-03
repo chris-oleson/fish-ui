@@ -68,44 +68,36 @@
 
 /* Light mode */
 .light {
-    --primary: var(--deep-red);
+    --primary: var(--light-blue);
     --secondary: var(--white);
     --background: var(--off-white);
     --text-primary: var(--black);
     --text-secondary: color-mix(in srgb, var(--text-primary) 65%, white);
-    --text-disabled: color-mix(in srgb, var(--text-primary) 55%, white);
     --hover-brightness: .9;
+    --success: var(--light-green);
     --error: var(--light-red);
-    --primary-gradient: linear-gradient(
-        135deg,
-        var(--primary) 60%,
-        color-mix(in srgb, var(--primary) 70%, black)
-    );
-    --secondary-gradient: linear-gradient(
-        135deg,
-        var(--secondary) 60%,
-        color-mix(in srgb, var(--secondary) 90%, black)
-    );
+    --primary-gradient: linear-gradient(135deg,
+            var(--primary) 60%,
+            color-mix(in srgb, var(--primary) 70%, black));
+    --secondary-gradient: linear-gradient(135deg,
+            var(--secondary) 60%,
+            color-mix(in srgb, var(--secondary) 90%, black));
 }
 
 /* Dark mode */
 .dark {
-    --primary: var(--dark-red);
+    --primary: var(--dark-blue);
     --secondary: var(--dark-grey);
     --background: var(--off-black);
     --text-primary: var(--white);
-    --text-secondary: color-mix(in srgb, var(--text-primary) 75%, black);
-    --text-disabled: color-mix(in srgb, var(--text-primary) 50%, black);
+    --text-secondary: color-mix(in srgb, var(--text-primary) 55%, black);
     --hover-brightness: 1.2;
+    --success: var(--dark-green);
     --error: var(--dark-red);
-    --primary-gradient: linear-gradient(
-        135deg,
-        var(--primary) 60%,
-        color-mix(in srgb, var(--primary) 60%, black)
-    );
-    --secondary-gradient: linear-gradient(
-        135deg,
-        var(--secondary) 60%,
-        color-mix(in srgb, var(--secondary) 65%, black)
-    );
+    --primary-gradient: linear-gradient(135deg,
+            var(--primary) 60%,
+            color-mix(in srgb, var(--primary) 60%, black));
+    --secondary-gradient: linear-gradient(135deg,
+            var(--secondary) 60%,
+            color-mix(in srgb, var(--secondary) 65%, black));
 }

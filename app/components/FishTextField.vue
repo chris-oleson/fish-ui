@@ -72,11 +72,11 @@ function getType() {
         line-height: 2rem;
 
         &::placeholder {
-            color: var(--text-disabled);
+            color: var(--text-secondary);
         }
     }
     &:has(input:focus-visible) {
-        outline: 1px solid var(--text-disabled);
+        outline: 1px solid var(--text-secondary);
     }
     &.error {
         outline: 1px solid var(--error);
@@ -88,7 +88,7 @@ function getType() {
 }
 
 .search-icon {
-    color: var(--text-disabled);
+    color: var(--text-secondary);
     position: absolute;
     right: .25rem;
     pointer-events: none;

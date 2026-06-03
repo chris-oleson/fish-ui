@@ -16,6 +16,7 @@ html {
 h1 {
     font-family: var(--font-display);
     font-size: var(--huge);
+    margin-bottom: var(--large);
 }
 
 h2 {
@@ -73,7 +74,7 @@ ul {
 
 hr {
     border: none;
-    border-bottom: 1px solid var(--text-disabled);
+    border-bottom: 1px solid var(--text-secondary);
     margin: 1rem 0;
 }
 
@@ -117,7 +118,7 @@ table {
 
     & th,
     td {
-        border: 1px solid var(--text-disabled);
+        border: 1px solid var(--text-secondary);
         padding: .5rem;
         vertical-align: top;
     }

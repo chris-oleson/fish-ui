@@ -32,7 +32,7 @@ textarea {
     box-shadow: var(--recessed-shadow);    padding: .5rem;
     transition-duration: .2s;
     &::placeholder {
-        color: var(--text-disabled);
+        color: var(--text-secondary);
     }
 }
 
