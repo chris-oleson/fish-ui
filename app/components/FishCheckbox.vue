@@ -19,49 +19,40 @@ const id = useId()
 </script>
 
 <style scoped>
-.checkbox-container {
-    display: flex;
-    gap: .5rem;
-    align-items: center;
-}
-
-label {
-    line-height: 2rem;
-    width: 100%;
-    text-wrap: nowrap;
-}
-
 input {
     display: block;
-    min-height: 2rem;
-    min-width: 2rem;
-    max-height: 2rem;
-    max-width: 2rem;
-    outline: none;
+    min-height: var(--size6);
+    min-width: var(--size6);
+    max-height: var(--size6);
+    max-width: var(--size6);
     appearance: none;
     position: relative;
-    background-color: var(--slightly-dark);
     border-radius: var(--border-radius);
+    border: var(--border);
     transition-duration: var(--fast);
-    box-shadow: var(--recessed-shadow);
+    cursor: pointer;
+
+    &:hover, &:focus-visible {
+        border: 1px solid var(--text-secondary);
+    }
 
     &::after {
-        content: '';
+        content: '✓';
         position: absolute;
-        inset: .25rem;
+        inset: 0;
+        font-size: var(--size6);
+        line-height: var(--size6);
+        text-align: center;
         border-radius: calc(var(--border-radius) / 1.5);
-        background-color: var(--primary);
-        box-shadow: var(--highlight-shadow);
-        transform: scale(0);
-        transition-duration: var(--fast);
+        display: none;
         pointer-events: none;
     }
 
     &.small {
-        min-height: 1.5rem;
-        min-width: 1.5rem;
-        max-height: 1.5rem;
-        max-width: 1.5rem;
+        min-height: var(--size5);
+        min-width: var(--size5);
+        max-height: var(--size5);
+        max-width: var(--size5);
 
         &::after {
             inset: 4px;
@@ -69,7 +60,7 @@ input {
     }
 
     &:checked::after {
-        transform: scale(1);
+        display: block;
     }
 }
 </style>

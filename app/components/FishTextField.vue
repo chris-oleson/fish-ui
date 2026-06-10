@@ -4,12 +4,12 @@
         <div class="error-container">
             <div class="text-field" :class="{ big }">
                 <input :id="id" ref="textField" v-model="modelValue" :type="getType()" :placeholder="placeholder" class="text-field" :class="{ error, search, password }">
-                <Icon v-if="search" class="search-icon" name="mdi:magnify"/>
+                <Icon v-if="search" class="search-icon" name="material-symbols-light:search"/>
                 <FishButton v-if="password" class="toggle-password" simple title="Hide password" @click="showPassword = !showPassword">
-                    <Icon :name="showPassword ? 'mdi:eye-off' : 'mdi:eye'"/>
+                    <Icon :name="showPassword ? 'material-symbols-light:eye-off' : 'material-symbols-light:eye'"/>
                 </FishButton>
             </div>
-            <span v-if="error" class="error-message">{{ error }}</span>
+            <span v-if="error" class="small error">{{ error }}</span>
         </div>
     </div>
 </template>
@@ -50,82 +50,65 @@ function getType() {
 
 <style scoped>
 .text-field-container {
-    display: flex;
-    gap: 1rem;
     flex: 1;
 }
 
 .text-field {
     position: relative;
-    outline: none;
     display: flex;
     align-items: center;
     border-radius: var(--border-radius);
+    transition-duration: var(--fast);
+
     & input {
+        border: var(--border);
         border-radius: var(--border-radius);
-        background-color: var(--slightly-dark);
-        box-shadow: var(--recessed-shadow);
+        background: transparent;
         width: 100%;
-        padding: 0 .5rem;
-        outline: none;
-        border: none;
-        line-height: 2rem;
+        height: var(--size6);
+        padding: 0 var(--size2);
 
         &::placeholder {
             color: var(--text-secondary);
         }
-    }
-    &:has(input:focus-visible) {
-        outline: 1px solid var(--text-secondary);
-    }
-    &.error {
-        outline: 1px solid var(--error);
+        &:hover, &:focus-visible {
+            border-color: var(--text-secondary);
+        }
+        &.error {
+            border-color: var(--error);
+        }
     }
 }
 
 .search, .password {
-    padding-right: 2rem !important;
+    padding-right: var(--size6) !important;
 }
 
 .search-icon {
     color: var(--text-secondary);
     position: absolute;
-    right: .25rem;
+    right: var(--size1);
     pointer-events: none;
 }
 
 .toggle-password {
     position: absolute !important;
-    right: .25rem;
-}
-
-label {
-    text-wrap: nowrap;
-    line-height: 2rem;
-}
-
-.error-message {
-    color: var(--error);
-    font-size: var(--tiny);
+    right: var(--size1);
 }
 
 .error-container {
     display: flex;
     flex-direction: column;
-    gap: .25rem;
-    flex: 1;
+    gap: var(--size1);
 }
 
 .big {
     & input {
-        height: var(--huge);
-        padding: 0 1rem;
+        height: var(--size8);
+        padding: 0 var(--size4);
     }
     & .search, .toggle-password {
-        right: .5rem;
-    }
-    & label {
-        line-height: 3rem;
+        right: var(--size2);
     }
 }
 

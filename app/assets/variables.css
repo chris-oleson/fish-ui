@@ -23,6 +23,20 @@
     --black: hsl(0, 0%, 5%);
     --grey: hsl(0, 0%, 45%);
 
+    /* Sizes */
+    --size1: .25rem;
+    --size2: .5rem;
+    --size3: .75rem;
+    --size4: 1rem;
+    --size5: 1.5rem;
+    --size6: 2rem;
+    --size7: 2.5rem;
+    --size8: 3rem;
+    --size9: 4rem;
+    --size10: 5rem;
+    --size11: 8rem;
+    --size12: 12rem;
+
     /* Shades */
     --slightly-light: rgba(255, 255, 255, 0.1);
     --light: rgba(255, 255, 255, 0.3);
