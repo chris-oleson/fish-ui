@@ -72,7 +72,7 @@ function getType() {
             color: var(--text-secondary);
         }
         &:hover, &:focus-visible {
-            border-color: var(--text-secondary);
+            border-color: var(--text-primary);
         }
         &.error {
             border-color: var(--error);

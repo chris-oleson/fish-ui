@@ -50,7 +50,7 @@ button, a {
     transition-duration: var(--fast);
     user-select: none;
     cursor: pointer;
-    color: var(--gold1);
+    color: var(--white);
     background: var(--primary);
     text-wrap: nowrap;
     &:is(:hover, :focus, .selected):not(.disabled) {

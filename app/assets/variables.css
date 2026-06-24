@@ -1,11 +1,4 @@
 :root {
-    /*
-    Media query definitions:
-        Mobile: < 600px
-        Tablet: < 942px
-        Laptop: > 942px
-    */
-
     /* Colors */
     --light-red: hsl(0, 67%, 51%);
     --dark-red: hsl(0, 99%, 27%);
@@ -78,6 +71,7 @@
     --icon-size: 1.5rem;
     --header-height: 4rem;
     --sidebar-width: 15rem;
+    --border: 1px solid var(--text-secondary);
 }
 
 /* Light mode */
@@ -86,16 +80,10 @@
     --secondary: var(--white);
     --background: var(--off-white);
     --text-primary: var(--black);
-    --text-secondary: color-mix(in srgb, var(--text-primary) 65%, white);
+    --text-secondary: color-mix(in srgb, var(--text-primary) 50%, white);
     --hover-brightness: .9;
     --success: var(--light-green);
     --error: var(--light-red);
-    --primary-gradient: linear-gradient(135deg,
-            var(--primary) 60%,
-            color-mix(in srgb, var(--primary) 70%, black));
-    --secondary-gradient: linear-gradient(135deg,
-            var(--secondary) 60%,
-            color-mix(in srgb, var(--secondary) 90%, black));
 }
 
 /* Dark mode */
@@ -104,14 +92,8 @@
     --secondary: var(--dark-grey);
     --background: var(--off-black);
     --text-primary: var(--white);
-    --text-secondary: color-mix(in srgb, var(--text-primary) 55%, black);
+    --text-secondary: color-mix(in srgb, var(--text-primary) 50%, black);
     --hover-brightness: 1.2;
     --success: var(--dark-green);
     --error: var(--dark-red);
-    --primary-gradient: linear-gradient(135deg,
-            var(--primary) 60%,
-            color-mix(in srgb, var(--primary) 60%, black));
-    --secondary-gradient: linear-gradient(135deg,
-            var(--secondary) 60%,
-            color-mix(in srgb, var(--secondary) 65%, black));
 }

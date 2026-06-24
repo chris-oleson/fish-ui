@@ -96,6 +96,7 @@ function handleClickOutside(event) {
     border-radius: var(--border-radius);
     transition-duration: var(--fast);
     border: var(--border);
+    min-width: 150px;
 
     & .content {
         position: absolute;
@@ -114,13 +115,13 @@ function handleClickOutside(event) {
     }
 
     &:hover, &:focus-visible {
-        border-color: var(--text-secondary);
+        border-color: var(--text-primary);
     }
 }
 
 .dropdown {
     position: absolute;
-    top: 100%;
+    top: 120%;
     left: -1px;
     right: -1px;
     display: flex;
@@ -132,6 +133,7 @@ function handleClickOutside(event) {
     max-height: 45vh;
     padding: 0;
     border: var(--border);
+    overflow: hidden;
     transition-duration: var(--fast);
 
     & button {

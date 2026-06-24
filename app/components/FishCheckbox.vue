@@ -33,7 +33,7 @@ input {
     cursor: pointer;
 
     &:hover, &:focus-visible {
-        border: 1px solid var(--text-secondary);
+        border: 1px solid var(--text-primary);
     }
 
     &::after {
