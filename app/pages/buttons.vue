@@ -159,11 +159,6 @@
                 </tr>
 
                 <tr>
-                    <td>--highlight-shadow</td>
-                    <td>Drop shadow used on default buttons</td>
-                </tr>
-
-                <tr>
                     <td>--fast</td>
                     <td>Transition duration for hover and active states</td>
                 </tr>

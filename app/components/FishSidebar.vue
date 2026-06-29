@@ -1,14 +1,12 @@
 <template>
 <nav>
-    <FishColumn style="padding: 1rem; gap: .5rem;">
-        <b>Variables</b>
-        <FishButton class="nav-button" simple to="/colors">Colors</FishButton>
-        <b>Components</b>
-        <FishButton class="nav-button" simple to="/buttons">Buttons</FishButton>
-        <FishButton class="nav-button" simple to="/checkboxes">Checkboxes</FishButton>
-        <FishButton class="nav-button" simple to="/dropdowns">Dropdowns</FishButton>
-        <FishButton class="nav-button" simple to="/text-fields">Text Fields</FishButton>
-    </FishColumn>
+    <b>Variables</b>
+    <FishButton class="nav-button" simple to="/colors">Colors</FishButton>
+    <b>Components</b>
+    <FishButton class="nav-button" simple to="/buttons">Buttons</FishButton>
+    <FishButton class="nav-button" simple to="/checkboxes">Checkboxes</FishButton>
+    <FishButton class="nav-button" simple to="/dropdowns">Dropdowns</FishButton>
+    <FishButton class="nav-button" simple to="/text-fields">Text Fields</FishButton>
 </nav>
 </template>
 
@@ -16,13 +14,16 @@
 nav {
     position: fixed;
     z-index: 50;
-    padding-top: var(--header-height);
     height: 100vh;
     width: var(--sidebar-width);
     display: flex;
     flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
     background-color: var(--secondary);
     box-shadow: var(--drop-shadow);
+    margin-top: 1rem;
+    padding-top: var(--header-height);
 }
 
 .nav-button {

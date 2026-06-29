@@ -11,16 +11,16 @@
     },
     "dependencies": {
         "@nuxt/fonts": "^0.14.0",
-        "@nuxt/icon": "2.2.1",
+        "@nuxt/icon": "2.2.5",
         "@nuxt/image": "^2.0.0",
-        "@nuxtjs/color-mode": "4.0.0",
-        "nuxt": "4.4.2",
-        "vue": "3.5.33",
-        "vue-router": "5.0.6"
+        "@nuxtjs/color-mode": "4.0.1",
+        "nuxt": "4.4.8",
+        "vue": "3.5.39",
+        "vue-router": "5.1.0"
     },
     "devDependencies": {
         "@iconify-json/mdi": "1.2.3",
-        "@nuxt/eslint": "1.15.2",
-        "eslint": "10.2.1"
+        "@nuxt/eslint": "1.16.0",
+        "eslint": "10.6.0"
     }
 }
