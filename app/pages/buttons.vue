@@ -39,6 +39,13 @@
                 </tr>
 
                 <tr>
+                    <td><code>outlined</code></td>
+                    <td>Boolean</td>
+                    <td>Minimal border-based button style</td>
+                    <td><FishButton outlined>Outlined</FishButton></td>
+                </tr>
+
+                <tr>
                     <td><code>big</code></td>
                     <td>Boolean</td>
                     <td>Increases button padding and spacing</td>

@@ -11,8 +11,8 @@ export default defineNuxtConfig({
     },
 
     css: [
-        '/assets/variables.css',
-        '/assets/global.css'
+        '~/assets/variables.css',
+        '~/assets/global.css'
     ],
 
     modules: [

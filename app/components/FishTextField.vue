@@ -65,14 +65,14 @@ function getType() {
         border-radius: var(--border-radius);
         background: transparent;
         width: 100%;
-        height: var(--size6);
-        padding: 0 var(--size2);
+        height: 2rem;
+        padding: 0 .5rem;
 
         &::placeholder {
             color: var(--text-secondary);
         }
         &:hover, &:focus-visible {
-            border-color: var(--text-primary);
+            border-color: var(--border-hover);
         }
         &.error {
             border-color: var(--error);
@@ -81,34 +81,34 @@ function getType() {
 }
 
 .search, .password {
-    padding-right: var(--size6) !important;
+    padding-right: 2rem !important;
 }
 
 .search-icon {
     color: var(--text-secondary);
     position: absolute;
-    right: var(--size1);
+    right: .25rem;
     pointer-events: none;
 }
 
 .toggle-password {
     position: absolute !important;
-    right: var(--size1);
+    right: .25rem;
 }
 
 .error-container {
     display: flex;
     flex-direction: column;
-    gap: var(--size1);
+    gap: .25rem;
 }
 
 .big {
     & input {
-        height: var(--size8);
-        padding: 0 var(--size4);
+        height: 3rem;
+        padding: 0 1rem;
     }
     & .search, .toggle-password {
-        right: var(--size2);
+        right: .5rem;
     }
 }
 

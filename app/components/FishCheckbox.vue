@@ -21,10 +21,8 @@ const id = useId()
 <style scoped>
 input {
     display: block;
-    min-height: var(--size6);
-    min-width: var(--size6);
-    max-height: var(--size6);
-    max-width: var(--size6);
+    height: 2rem;
+    width: 2rem;
     appearance: none;
     position: relative;
     border-radius: var(--border-radius);
@@ -33,15 +31,15 @@ input {
     cursor: pointer;
 
     &:hover, &:focus-visible {
-        border: 1px solid var(--text-primary);
+        border: 1px solid var(--border-hover);
     }
 
     &::after {
         content: '✓';
         position: absolute;
         inset: 0;
-        font-size: var(--size6);
-        line-height: var(--size6);
+        font-size: 2rem;
+        line-height: 1em;
         text-align: center;
         border-radius: calc(var(--border-radius) / 1.5);
         display: none;
@@ -49,13 +47,11 @@ input {
     }
 
     &.small {
-        min-height: var(--size5);
-        min-width: var(--size5);
-        max-height: var(--size5);
-        max-width: var(--size5);
+        height: 1.5rem;
+        width: 1.5rem;
 
         &::after {
-            inset: 4px;
+            font-size: 1.5rem;
         }
     }
 

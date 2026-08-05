@@ -91,18 +91,17 @@ function handleClickOutside(event) {
     align-items: center;
     position: relative;
     cursor: pointer;
-    height: var(--size6);
+    height: 2rem;
     flex: 1;
     border-radius: var(--border-radius);
     transition-duration: var(--fast);
     border: var(--border);
-    min-width: 150px;
+    min-width: 100px;
 
     & .content {
         position: absolute;
-        left: var(--size2);
-        right: var(--size6);
-        text-align: start;
+        left: .5rem;
+        right: 2rem;
         min-width: 0;
         overflow: hidden;
         white-space: nowrap;
@@ -115,13 +114,13 @@ function handleClickOutside(event) {
     }
 
     &:hover, &:focus-visible {
-        border-color: var(--text-primary);
+        border-color: var(--border-hover);
     }
 }
 
 .dropdown {
     position: absolute;
-    top: 120%;
+    top: 100%;
     left: -1px;
     right: -1px;
     display: flex;
@@ -133,14 +132,13 @@ function handleClickOutside(event) {
     max-height: 45vh;
     padding: 0;
     border: var(--border);
-    overflow: hidden;
     transition-duration: var(--fast);
 
     & button {
         cursor: pointer;
         background: transparent;
         border: none;
-        padding: var(--size2);
+        padding: .5rem;
         width: 100%;
         text-align: start;
         transition-duration: var(--fast);
@@ -157,7 +155,7 @@ function handleClickOutside(event) {
 
 .iconify {
     color: var(--text-secondary);
-    margin-right: var(--size1);
+    margin-right: .25rem;
     margin-left: auto;
 }
 </style>
