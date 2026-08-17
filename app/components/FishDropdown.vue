@@ -133,6 +133,7 @@ function handleClickOutside(event) {
     padding: 0;
     border: var(--border);
     transition-duration: var(--fast);
+    overflow: hidden;
 
     & button {
         cursor: pointer;
