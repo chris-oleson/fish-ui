@@ -21,7 +21,7 @@ nav {
     padding: 1rem;
     gap: 1rem;
     background-color: var(--secondary);
-    box-shadow: var(--drop-shadow);
+    box-shadow: 0 2px 4px rgba(0,0,0,.3);
     margin-top: 1rem;
     padding-top: var(--header-height);
 }

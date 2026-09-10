@@ -18,6 +18,7 @@ h1 {
     font-family: var(--font-display);
     font-size: var(--font-size-h1);
     text-align: center;
+    margin-bottom: .5em;
 }
 
 h2 {
@@ -124,24 +125,9 @@ section {
     }
 }
 
-.heading {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-}
-
 .logo {
     min-height: 4rem;
     min-width: 4rem;
-}
-
-.subheading {
-    font-size: 1.5rem;
-    font-family: var(--font-display);
-    text-align: center;
 }
 
 @media screen and (max-width: 600px) {
@@ -157,11 +143,18 @@ section {
 
 table {
     border-collapse: collapse;
+    width: 100%;
 
     & th,
     td {
         padding: .5rem;
         vertical-align: top;
+    }
+
+    tbody {
+        & tr:nth-child(odd) {
+            background-color: var(--secondary);
+        }
     }
 
     & th {

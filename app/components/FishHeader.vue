@@ -10,7 +10,7 @@
 <style scoped>
 header {
     background-color: var(--secondary);
-    box-shadow: var(--drop-shadow);
+    box-shadow: 0 2px 4px rgba(0,0,0,.3);
     z-index: 100;
     position: fixed;
     width: 100%;

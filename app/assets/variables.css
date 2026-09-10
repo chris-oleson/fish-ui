@@ -16,11 +16,6 @@
     --black: hsl(0, 0%, 5%);
     --grey: hsl(0, 0%, 45%);
 
-    /* Shades */
-    --light: rgba(255, 255, 255, .2);
-    --dark: rgba(0, 0, 0, .3);
-    --extra-dark: rgba(0, 0, 0, .6);
-
     /* Fonts */
     --font-text: 'Inter', sans-serif;
     --font-display: 'Inter', serif;
@@ -31,19 +26,13 @@
 
     /* Font sizes */
     --font-size-default: 1rem;
-    --font-size-h1: 4rem;
-    --font-size-h2: 2.5rem;
+    --font-size-h1: 3rem;
+    --font-size-h2: 2rem;
     --font-size-h3: 1.5rem;
 
     /* Durations */
     --fast: .25s;
     --slow: .5s;
-
-    /* Shadows */
-    --drop-shadow: 0 2px 4px var(--extra-dark);
-    --book-shadow: -5px 5px 8px var(--extra-dark);
-    --book-hover-shadow: -10px 10px 15px var(--dark);
-    --highlight-shadow: inset -1px 1px 2px var(--light);
 
     /* Other */
     --border-radius: .5rem;
@@ -51,7 +40,6 @@
     --header-height: 4rem;
     --sidebar-width: 15rem;
     --border-hover: var(--text-primary);
-    --overlay: var(--dark);
     --error: var(--red1);
 }
 
