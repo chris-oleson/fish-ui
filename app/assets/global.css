@@ -95,12 +95,8 @@ hr {
 }
 
 section {
-    padding: 8rem 2rem;
+    padding: 2rem;
     margin: 0 auto;
-
-    &.secondary {
-        background: var(--secondary);
-    }
 }
 
 .card {

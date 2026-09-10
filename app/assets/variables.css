@@ -50,7 +50,6 @@
     --icon-size: 1.5rem;
     --header-height: 4rem;
     --sidebar-width: 15rem;
-    --border: 1px solid var(--text-secondary);
     --border-hover: var(--text-primary);
     --overlay: var(--dark);
     --error: var(--red1);
@@ -70,10 +69,11 @@
     --secondary: var(--white);
     --background: var(--off-white);
     --text-primary: var(--black);
-    --text-secondary: color-mix(in srgb, var(--text-primary) 50%, white);
+    --text-secondary: color-mix(var(--text-primary) 60%, transparent);
     --hover-brightness: .9;
     --success: var(--light-green);
     --error: var(--light-red);
+    --border: 1px solid color-mix(var(--text-primary) 40%, transparent);
 }
 
 /* Dark mode */
@@ -82,8 +82,9 @@
     --secondary: var(--dark-grey);
     --background: var(--off-black);
     --text-primary: var(--white);
-    --text-secondary: color-mix(in srgb, var(--text-primary) 50%, black);
+    --text-secondary: color-mix(var(--text-primary) 60%, transparent);
     --hover-brightness: 1.2;
     --success: var(--dark-green);
     --error: var(--dark-red);
+    --border: 1px solid color-mix(var(--text-primary) 40%, transparent);
 }
