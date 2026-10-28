@@ -1,12 +1,12 @@
 <template>
 <nav>
     <b>Variables</b>
-    <FishButton class="nav-button" simple to="/colors">Colors</FishButton>
+    <FishButton class="nav-button" variant="simple" to="/colors">Colors</FishButton>
     <b>Components</b>
-    <FishButton class="nav-button" simple to="/buttons">Buttons</FishButton>
-    <FishButton class="nav-button" simple to="/checkboxes">Checkboxes</FishButton>
-    <FishButton class="nav-button" simple to="/dropdowns">Dropdowns</FishButton>
-    <FishButton class="nav-button" simple to="/text-fields">Text Fields</FishButton>
+    <FishButton class="nav-button" variant="simple" to="/buttons">Buttons</FishButton>
+    <FishButton class="nav-button" variant="simple" to="/checkboxes">Checkboxes</FishButton>
+    <FishButton class="nav-button" variant="simple" to="/dropdowns">Dropdowns</FishButton>
+    <FishButton class="nav-button" variant="simple" to="/text-fields">Text Fields</FishButton>
 </nav>
 </template>
 
@@ -20,7 +20,7 @@ nav {
     flex-direction: column;
     padding: 1rem;
     gap: 1rem;
-    background-color: var(--secondary);
+    background-color: var(--surface);
     box-shadow: 0 2px 4px rgba(0,0,0,.3);
     margin-top: 1rem;
     padding-top: var(--header-height);

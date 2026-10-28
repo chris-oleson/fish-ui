@@ -1,5 +1,5 @@
+/* Primitive variables */
 :root {
-    /* Colors */
     --light-red: hsl(0, 67%, 51%);
     --dark-red: hsl(0, 99%, 27%);
     --dark-blue: hsl(200, 54%, 22%);
@@ -13,66 +13,77 @@
     --brown: hsl(40, 10%, 10%);
     --off-black: hsl(240, 10%, 7%);
     --dark-grey: hsl(240, 10%, 12%);
-    --black: hsl(0, 0%, 5%);
-    --grey: hsl(0, 0%, 45%);
 
-    /* Fonts */
-    --font-text: 'Inter', sans-serif;
-    --font-display: 'Inter', serif;
+    --size-1: .25rem;
+    --size-2: .5rem;
+    --size-3: .75rem;
+    --size-4: 1rem;
+    --size-5: 1.5rem;
+    --size-6: 2rem;
+    --size-7: 2.5rem;
+    --size-8: 3rem;
+    --size-9: 4rem;
+    --size-10: 5rem;
+    --size-11: 7rem;
+    --size-12: 12rem;
 
-    /* Font weights */
-    --bold-weight: 500;
-    --normal-weight: 300;
+    --font-family-default: 'Inter', sans-serif;
+    --font-family-display: 'Inter', sans-serif;
 
-    /* Font sizes */
-    --font-size-default: 1rem;
-    --font-size-h1: 3rem;
-    --font-size-h2: 2rem;
-    --font-size-h3: 1.5rem;
+    --font-weight-default: 300;
+    --font-weight-bold: 500;
 
-    /* Durations */
-    --fast: .25s;
-    --slow: .5s;
+    --line-height-1: 1rem;
+    --line-height-2: 1.2;
+    --line-height-3: 1.4;
 
-    /* Other */
-    --border-radius: .5rem;
-    --icon-size: 1.5rem;
+    --duration-fast: .25s;
+    --duration-slow: .5s;
+
+    --border-radius: 8px;
+
     --header-height: 4rem;
     --sidebar-width: 15rem;
-    --border-hover: var(--text-primary);
-    --error: var(--red1);
 }
 
-/* Mobile view */
-@media screen and (max-width: 600px) {
-    :root {
-        --font-size-h1: 3rem;
-        --font-size-h2: 2rem;
-    }
-}
-
-/* Light mode */
-.light {
-    --primary: var(--light-blue);
-    --secondary: var(--white);
-    --background: var(--off-white);
-    --text-primary: var(--black);
-    --text-secondary: color-mix(var(--text-primary) 60%, transparent);
-    --hover-brightness: .9;
-    --success: var(--light-green);
-    --error: var(--light-red);
-    --border: 1px solid color-mix(var(--text-primary) 40%, transparent);
-}
-
-/* Dark mode */
+/* Semantic variables */
+.light,
 .dark {
-    --primary: var(--dark-blue);
-    --secondary: var(--dark-grey);
+    --on-primary: var(--white);
+    --danger: var(--red-1);
+    --text-muted: color-mix(var(--text-default) 60%, transparent);
+    --tint: color-mix(var(--text-default) 10%, transparent);
+    --tint-hover: color-mix(var(--text-default) 15%, transparent);
+    --border: color-mix(var(--text-default) 40%, transparent);
+    --border-hover: var(--text-default);
+
+    --font-size-default: var(--size-4);
+    --font-size-h1: var(--size-8);
+    --font-size-h2: var(--size-6);
+    --font-size-h3: var(--size-5);
+    --font-size-small: var(--size-3);
+
+    --line-height-default: var(--line-height-3);
+    --line-height-display: var(--line-height-2);
+    --line-height-input: var(--line-height-1);
+}
+
+/* Light mode variables*/
+.light {
+    --background: var(--white-2);
+    --surface: var(--white-1);
+    --primary: var(--light-blue);
+    --text-default: var(--brown-1);
+    --danger: var(--light-red);
+    --success: var(--light-green);
+}
+
+/* Dark mode variables*/
+.dark {
     --background: var(--off-black);
-    --text-primary: var(--white);
-    --text-secondary: color-mix(var(--text-primary) 60%, transparent);
-    --hover-brightness: 1.2;
+    --surface: var(--dark-grey);
+    --primary: var(--dark-blue);
+    --text-default: var(--white);
+    --danger: var(--dark-red);
     --success: var(--dark-green);
-    --error: var(--dark-red);
-    --border: 1px solid color-mix(var(--text-primary) 40%, transparent);
 }

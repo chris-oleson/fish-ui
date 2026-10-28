@@ -9,7 +9,7 @@
 
 <style scoped>
 header {
-    background-color: var(--secondary);
+    background-color: var(--surface);
     box-shadow: 0 2px 4px rgba(0,0,0,.3);
     z-index: 100;
     position: fixed;

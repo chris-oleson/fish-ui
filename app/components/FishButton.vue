@@ -1,122 +1,131 @@
 <template>
-<NuxtLink v-if="to" :to="to" :disabled="disabled" :class="classes" draggable="false" :title="title"><slot/></NuxtLink>
-<button v-else :disabled="disabled" :class="classes" draggable="false" :title="title"><slot/></button>
+    <NuxtLink v-if="to" :to="to" :disabled="disabled" :class="classes" draggable="false" :title="title">
+        <slot/>
+    </NuxtLink>
+
+    <button v-else :disabled="disabled" :class="classes" draggable="false" :title="title">
+        <slot/>
+    </button>
 </template>
 
 <script setup>
 const props = defineProps({
     to: String,
-    simple: Boolean,
-    big: Boolean,
-    small: Boolean,
+    title: String,
+
+    variant: {
+        type: String,
+        default: 'primary'
+    },
+
+    size: {
+        type: String,
+        default: 'medium'
+    },
+
+    role: {
+        type: String,
+        default: ''
+    },
+
     selected: Boolean,
     disabled: Boolean,
-    success: Boolean,
-    error: Boolean,
     round: Boolean,
-    secondary: Boolean,
-    chip: Boolean,
-    title: String,
-    outlined: Boolean
 })
 
 const classes = computed(() => ({
-    simple: props.simple,
-    big: props.big,
-    small: props.small,
+    primary: props.variant === 'primary',
+    secondary: props.variant === 'secondary',
+    simple: props.variant === 'simple',
+
+    large: props.size === 'large',
+    medium: props.size === 'medium',
+    small: props.size === 'small',
+
+    danger: props.role === 'danger',
+    success: props.role === 'success',
+
+    round: props.round,
     selected: props.selected,
     disabled: props.disabled,
-    success: props.success,
-    error: props.error,
-    round: props.round,
-    secondary: props.secondary,
-    chip: props.chip,
-    outlined: props.outlined,
 }))
 </script>
 
 <style scoped>
 button, a {
-    padding: 0 1rem;
+    padding: 0 var(--size-4);
     letter-spacing: .05em;
     display: flex;
-    gap: .5rem;
+    gap: var(--size-2);
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
     text-decoration: inherit;
     width: fit-content;
-    height: 2rem;
+    height: fit-content;
     border: none;
     border-radius: var(--border-radius);
-    transition-duration: var(--fast);
+    transition-duration: var(--duration-fast);
     user-select: none;
     cursor: pointer;
-    color: var(--white);
-    background: var(--primary);
     text-wrap: nowrap;
+    line-height: var(--line-height-input);
+}
+
+.primary {
+    color: var(--on-primary);
+    background: var(--primary);
     &:is(:hover, :focus, .selected):not(.disabled, :active) {
+        color: var(--on-primary);
         filter: brightness(1.2);
-    }
-    &.error {
-        background: var(--error);
     }
     &.success {
         background: var(--success);
     }
-    &.disabled {
-        opacity: .3;
-        pointer-events: none;
+    &.danger {
+        background: var(--danger);
     }
-    &.big {
-        gap: 1rem;
-        height: 3rem;
-        padding: 0 1.5rem;
+}
+
+.secondary {
+    color: var(--text);
+    padding: var(--size-2);
+    border: 1px solid var(--border);
+    background: transparent;
+    &:is(:hover, :focus, .selected):not(.disabled, :active) {
+        border-color: var(--border-hover);
     }
-    &.secondary {
-        color: var(--text-primary);
-        background: var(--secondary);
-        &:is(:hover, :focus, .selected):not(.disabled, :active) {
-            filter: brightness(var(--hover-brightness));
-        }
+}
+
+.simple {
+    color: var(--text-muted);
+    background: transparent;
+    position: relative;
+    &:is(:hover, :focus, .selected):not(.disabled, :active) {
+        color: var(--text);
     }
-    &.outlined {
-        color: var(--text-primary);
-        border: var(--border);
-        background: transparent;
-        &:is(:hover, :focus, .selected):not(.disabled, :active) {
-            border-color: var(--border-hover);
-            filter: none;
-        }
-    }
-    &.simple {
-        color: var(--text-secondary);
-        padding: 0;
-        background: transparent;
-        border-radius: 0;
-        position: relative;
-        height: 1rem;
-        &:is(:hover, :focus, .selected):not(.disabled, :active) {
-            color: var(--text-primary);
-            filter: none;
-        }
-    }
-    &.small {
-        font-size: .75rem;
-        gap: .25rem;
-    }
-    &.round {
-        width: 3rem !important;
-        height: 3rem !important;
-        padding: 0;
-        border-radius: 50%;
-    }
-    &.chip {
-        height: calc(1.5rem - 2px);
-        padding: 0 .5rem;
-        border-radius: var(--border-radius);
-        font-size: .75rem;
-        gap: .25rem;
-    }
+}
+
+.large {
+    padding: var(--size-4) var(--size-5);
+}
+
+.medium {
+    padding: var(--size-2) var(--size-4);
+}
+
+.small {
+    padding: var(--size-1) var(--size-2);
+    font-size: var(--font-size-small);
+}
+
+.round {
+    padding: var(--size-2);
+    border-radius: 50%;
+}
+
+.disabled {
+    opacity: .3;
+    pointer-events: none;
 }
 </style>

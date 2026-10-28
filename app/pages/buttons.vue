@@ -25,45 +25,38 @@
                 </tr>
 
                 <tr>
-                    <td><code>to</code></td>
+                    <td><code>to="/example"</code></td>
                     <td>String</td>
                     <td>Renders the button as a NuxtLink</td>
-                    <td><FishButton to="/">Link Button</FishButton></td>
+                    <td><FishButton to="/example">Link Button</FishButton></td>
                 </tr>
 
                 <tr>
-                    <td><code>simple</code></td>
+                    <td><code>variant="simple"</code></td>
                     <td>Boolean</td>
                     <td>Minimal text-only button style</td>
-                    <td><FishButton simple>Simple</FishButton></td>
+                    <td><FishButton variant="simple">Simple</FishButton></td>
                 </tr>
 
                 <tr>
-                    <td><code>outlined</code></td>
+                    <td><code>variant="secondary"</code></td>
                     <td>Boolean</td>
                     <td>Minimal border-based button style</td>
-                    <td><FishButton outlined>Outlined</FishButton></td>
+                    <td><FishButton variant="secondary">Secondary Button</FishButton></td>
                 </tr>
 
                 <tr>
-                    <td><code>big</code></td>
+                    <td><code>size="large"</code></td>
                     <td>Boolean</td>
                     <td>Increases button padding and spacing</td>
-                    <td><FishButton big>Big Button</FishButton></td>
+                    <td><FishButton size="large">Large Button</FishButton></td>
                 </tr>
 
                 <tr>
-                    <td><code>small</code></td>
+                    <td><code>size="small"</code></td>
                     <td>Boolean</td>
                     <td>Uses a smaller font size</td>
-                    <td><FishButton small>Small Button</FishButton></td>
-                </tr>
-
-                <tr>
-                    <td><code>secondary</code></td>
-                    <td>Boolean</td>
-                    <td>Uses the secondary color palette</td>
-                    <td><FishButton secondary>Secondary</FishButton></td>
+                    <td><FishButton size="small">Small Button</FishButton></td>
                 </tr>
 
                 <tr>
@@ -84,14 +77,14 @@
                     <td><code>success</code></td>
                     <td>Boolean</td>
                     <td>Uses the success color palette</td>
-                    <td><FishButton success>Success</FishButton></td>
+                    <td><FishButton role="success">Success</FishButton></td>
                 </tr>
 
                 <tr>
-                    <td><code>error</code></td>
+                    <td><code>role="danger"</code></td>
                     <td>Boolean</td>
                     <td>Uses the error color palette</td>
-                    <td><FishButton error>Error</FishButton></td>
+                    <td><FishButton role="danger">Danger</FishButton></td>
                 </tr>
 
                 <tr>
@@ -103,13 +96,6 @@
                             <Icon name="mdi:heart" />
                         </FishButton>
                     </td>
-                </tr>
-
-                <tr>
-                    <td><code>chip</code></td>
-                    <td>Boolean</td>
-                    <td>Creates a compact chip/tag style button</td>
-                    <td><FishButton chip>Chip</FishButton></td>
                 </tr>
             </tbody>
         </table>
